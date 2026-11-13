@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "finrag"
+version = "0.1.0"
+description = "Agentic RAG over SEC 10-K filings, with a reproducible evaluation harness."
+readme = "README.md"
+requires-python = ">=3.10"
+# Dependencies are added only when a module actually uses them.
+dependencies = [
+  "pydantic>=2.7",
+  "pydantic-settings>=2.3",
+  "pyyaml>=6.0",
+  "requests>=2.32",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[project.scripts]
+finrag-download = "finrag.ingest.edgar:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/finrag"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

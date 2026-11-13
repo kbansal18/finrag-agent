@@ -1,0 +1,80 @@
+"""Typed configuration.
+
+Two kinds of config, kept separate on purpose:
+
+* ``Settings``: environment-specific values and secrets. Loaded from environment
+  variables, falling back to a git-ignored ``.env`` file. Secrets are ``SecretStr`` so
+  they are masked in logs, reprs and tracebacks.
+* ``CorpusConfig``: *what* we index. A committed YAML file, because it is part of the
+  experiment definition and must be reproducible from the repo alone.
+"""
+
+from __future__ import annotations
+
+import re
+from functools import lru_cache
+from pathlib import Path
+
+import yaml
+from pydantic import BaseModel, Field, SecretStr, field_validator
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+_EMAIL_RE = re.compile(r"[^@\s]+@[^@\s]+\.[^@\s]+")
+
+
+class Settings(BaseSettings):
+    """Runtime settings. Env var names are the upper-cased field names."""
+
+    model_config = SettingsConfigDict(
+        env_file=PROJECT_ROOT / ".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
+
+    groq_api_key: SecretStr | None = None
+    sec_user_agent: str | None = None
+    data_dir: Path = PROJECT_ROOT / "data"
+    corpus_config_path: Path = PROJECT_ROOT / "config" / "corpus.yaml"
+
+    @property
+    def raw_dir(self) -> Path:
+        return self.data_dir / "raw"
+
+    def require_sec_user_agent(self) -> str:
+        """SEC blocks requests without a contact email in the User-Agent; fail early."""
+        ua = (self.sec_user_agent or "").strip()
+        if not _EMAIL_RE.search(ua) or "example.com" in ua:
+            raise ValueError(
+                "Set SEC_USER_AGENT in .env to 'Your Name your.email@domain' "
+                "(SEC requires a real contact email)."
+            )
+        return ua
+
+
+class CorpusConfig(BaseModel):
+    """Which filings make up the corpus."""
+
+    form_type: str = "10-K"
+    fiscal_years: list[int] = Field(min_length=1)
+    tickers: list[str] = Field(min_length=1)
+
+    @field_validator("tickers")
+    @classmethod
+    def _normalize_tickers(cls, v: list[str]) -> list[str]:
+        cleaned = [t.strip().upper() for t in v]
+        if len(set(cleaned)) != len(cleaned):
+            raise ValueError("duplicate tickers in corpus config")
+        return cleaned
+
+
+def load_corpus_config(path: Path) -> CorpusConfig:
+    with path.open(encoding="utf-8") as f:
+        return CorpusConfig.model_validate(yaml.safe_load(f))
+
+
+@lru_cache
+def get_settings() -> Settings:
+    """Cached so every module shares one Settings instance."""
+    return Settings()

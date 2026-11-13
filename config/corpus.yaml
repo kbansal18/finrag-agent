@@ -1,0 +1,13 @@
+# Which filings make up the corpus. Edit this file, then run `make download`.
+#
+# fiscal_years uses the calendar year in which the fiscal period ENDS
+# (e.g. Apple's year ending Sept 2024 -> 2024; Walmart's ending Jan 2025 -> 2025).
+
+form_type: 10-K
+fiscal_years: [2023, 2024]
+tickers:
+  # PLACEHOLDER list: replace with your chosen companies
+  - AAPL
+  - MSFT
+  - JPM
+  - WMT
