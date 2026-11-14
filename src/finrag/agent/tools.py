@@ -156,6 +156,7 @@ class Toolbox:
     retriever: Retriever
     db_path: Path
     sources: dict[str, Source] = field(default_factory=dict)
+    _searches: set[tuple] = field(default_factory=set)
     _n_search: int = 0
     _n_table: int = 0
 
@@ -245,7 +246,22 @@ class Toolbox:
         tickers: list[str] | None = None,
         fiscal_years: list[int] | None = None,
         items: list[str] | None = None,
-    ) -> list[dict[str, Any]]:
+    ) -> list[dict[str, Any]] | dict[str, str]:
+        # Loop guard. Models stuck on an unanswerable question rephrase the same search
+        # ("iPhone units", "iPhone unit sales", ...). Repeats are refused, and a search
+        # that surfaces nothing new says so, nudging the model to conclude.
+        key = (
+            " ".join(sorted(query.lower().split())),
+            tuple(sorted(t.upper() for t in tickers or [])),
+            tuple(sorted(fiscal_years or [])),
+            tuple(sorted(i.upper() for i in items or [])),
+        )
+        if key in self._searches:
+            return {
+                "note": "You already ran this exact search. If the information was not "
+                "found, it is probably not disclosed: answer now."
+            }
+        self._searches.add(key)
         results = self.retriever.search(
             query, k=SEARCH_K, tickers=tickers, fiscal_years=fiscal_years, items=items
         )
@@ -266,6 +282,11 @@ class Toolbox:
             )  # fmt: skip
         if not out:
             return [{"note": "no passages match these filters"}]
+        if all("text" not in o for o in out):
+            return {
+                "note": "This search found no passages you have not already seen. If the "
+                "answer is not in them, it is probably not disclosed: answer now."
+            }
         return out
 
     def _sql(self, sql: str) -> dict[str, Any]:

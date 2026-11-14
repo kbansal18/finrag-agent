@@ -25,7 +25,7 @@ from finrag.agent.llm import LLM, LLMResponse
 from finrag.agent.tools import Source, Toolbox
 from finrag.retrieval.retriever import Retriever
 
-MAX_STEPS = 8
+MAX_STEPS = 6
 RAG_K = 8
 
 GROUNDING_RULES = """\
@@ -53,6 +53,10 @@ Tools:
   is as first reported. If the question asks what a specific filing reported, use
   original_value or the filing text.
 - calculate: use it for every arithmetic step (growth rates, margins, differences).
+
+Search budget: if two searches with different wording do not find something, the filing
+most likely does not disclose it. Say so instead of rephrasing the same search again.
+Companies often do not disclose unit volumes, customer names, or segment-level detail.
 
 {GROUNDING_RULES}"""
 

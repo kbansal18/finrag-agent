@@ -111,11 +111,8 @@ def test_toolbox_assigns_stable_source_ids_and_returns_errors(retriever, db):
     first = json.loads(
         tb.execute("search_filings", json.dumps({"query": "net sales", "tickers": ["AAPL"]}))
     )
-    again = json.loads(
-        tb.execute("search_filings", json.dumps({"query": "sales", "tickers": ["AAPL"]}))
-    )
-    assert first[0]["source_id"] == again[0]["source_id"] == "S1"  # same chunk, same id
-    assert "text" in first[0] and "text" not in again[0]
+    assert first[0]["source_id"] == "S1" and "text" in first[0]
+    assert tb.sources["S1"].chunk_id == "c0"
     err = json.loads(tb.execute("query_financials", json.dumps({"sql": "DROP TABLE x"})))
     assert "error" in err
 
@@ -169,13 +166,19 @@ def test_rag_puts_context_in_prompt_and_tracks_citations(retriever):
     assert ans.cited == ["S1"] and ans.mode == "rag"
 
 
-def test_repeat_passages_sent_as_id_only(retriever, db):
+def test_search_with_nothing_new_tells_model_to_conclude(retriever, db):
     tb = Toolbox(retriever, db)
     tb.execute("search_filings", json.dumps({"query": "net sales", "tickers": ["AAPL"]}))
-    again = json.loads(
-        tb.execute("search_filings", json.dumps({"query": "sales", "tickers": ["AAPL"]}))
-    )
-    assert again == [{"source_id": "S1", "note": "already shown above"}]
+    again = tb.execute("search_filings", json.dumps({"query": "sales", "tickers": ["AAPL"]}))
+    assert "no passages you have not already seen" in json.loads(again)["note"]
+
+
+def test_repeated_search_refused_even_with_reordered_words(retriever, db):
+    tb = Toolbox(retriever, db)
+    args = {"query": "iPhone units sold", "tickers": ["AAPL"], "fiscal_years": [2025]}
+    tb.execute("search_filings", json.dumps(args))
+    repeat = tb.execute("search_filings", json.dumps(args | {"query": "units sold iPhone"}))
+    assert "already ran this exact search" in json.loads(repeat)["note"]
 
 
 class FailingLLM:
