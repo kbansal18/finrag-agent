@@ -37,6 +37,10 @@ def _normalize(x: np.ndarray) -> np.ndarray:
 
 class FastEmbedder:
     def __init__(self, model_name: str = DEFAULT_EMBEDDING_MODEL, batch_size: int = 64) -> None:
+        # Single process on purpose: ONNX Runtime already uses every CPU core inside one
+        # process. Adding fastembed's multi-process mode on top (one process per core,
+        # each using all cores and holding its own model copy) oversubscribed the CPU
+        # and exhausted memory on a laptop.
         from fastembed import TextEmbedding
 
         self.model_name = model_name

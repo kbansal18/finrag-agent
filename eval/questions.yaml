@@ -1,0 +1,1060 @@
+- id: fact-01
+  category: fact
+  question: How many full-time equivalent employees did Apple have at the end of fiscal 2025?
+  answer: Approximately 166,000 full-time equivalent employees as of September 27, 2025.
+  value: 166000
+  unit: employees
+  evidence:
+  - ticker: AAPL
+    fiscal_year: 2025
+    text: approximately 166,000 full-time equivalent employees
+- id: fact-02
+  category: fact
+  question: How many full-time employees did Microsoft have as of June 30, 2025?
+  answer: Approximately 228,000 full-time employees (125,000 in the U.S. and 103,000 internationally).
+  value: 228000
+  unit: employees
+  evidence:
+  - ticker: MSFT
+    fiscal_year: 2025
+    text: we employed approximately 228,000 people on a full-time basis
+- id: fact-03
+  category: fact
+  question: How many employees did NVIDIA have at the end of fiscal year 2025, and in how many countries?
+  answer: Approximately 36,000 employees in 38 countries.
+  value: 36000
+  unit: employees
+  evidence:
+  - ticker: NVDA
+    fiscal_year: 2025
+    text: approximately 36,000 employees in 38 countries
+- id: fact-04
+  category: fact
+  question: How many employees did Alphabet have as of December 31, 2025?
+  answer: 190,820 employees.
+  value: 190820
+  unit: employees
+  evidence:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    text: Alphabet had 190,820 employees
+- id: fact-05
+  category: fact
+  question: How many employees did JPMorganChase have globally at the end of 2025, and in how many countries were
+    they located?
+  answer: 318,512 employees located in 66 countries.
+  value: 318512
+  unit: employees
+  evidence:
+  - ticker: JPM
+    fiscal_year: 2025
+    text: JPMorganChase had 318,512 employees globally
+- id: fact-06
+  category: fact
+  question: How many employees did Costco employ worldwide at the end of fiscal 2025?
+  answer: 341,000 employees worldwide.
+  value: 341000
+  unit: employees
+  evidence:
+  - ticker: COST
+    fiscal_year: 2025
+    text: we employed 341,000 employees worldwide
+  notes: 'Trap: the same filing says approximately 200,000 employees participated in an engagement program; that
+    is not headcount.'
+- id: fact-07
+  category: fact
+  question: Approximately how many associates did Walmart have as of January 31, 2025?
+  answer: Approximately 2.1 million associates (about 1.6 million in the U.S. and 0.5 million internationally).
+  value: 2.1
+  unit: million associates
+  evidence:
+  - ticker: WMT
+    fiscal_year: 2025
+    text: approximately 2.1 million associates as of January 31, 2025
+- id: fact-08
+  category: fact
+  question: What was Goldman Sachs's headcount as of December 2025?
+  answer: 47,400.
+  value: 47400
+  unit: employees
+  evidence:
+  - ticker: GS
+    fiscal_year: 2025
+    text: we had headcount of 47,400
+- id: fact-09
+  category: fact
+  question: What are Apple's reportable segments?
+  answer: Americas, Europe, Greater China, Japan and Rest of Asia Pacific. Apple manages its business primarily
+    on a geographic basis.
+  evidence:
+  - ticker: AAPL
+    fiscal_year: 2025
+    text: The Company’s reportable segments consist of the Americas, Europe, Greater China, Japan and Rest of Asia
+      Pacific
+- id: fact-10
+  category: fact
+  question: What are NVIDIA's operating segments?
+  answer: 'Two operating segments: Compute & Networking, and Graphics.'
+  evidence:
+  - ticker: NVDA
+    fiscal_year: 2025
+    text: Our two operating segments are "Compute & Networking" and "Graphics."
+- id: fact-11
+  category: fact
+  question: What are Walmart's reportable segments?
+  answer: 'Three: Walmart U.S., Walmart International and Sam''s Club U.S.'
+  evidence:
+  - ticker: WMT
+    fiscal_year: 2025
+    text: 'three reportable segments: Walmart U.S., Walmart International and Sam''s Club U.S.'
+- id: fact-12
+  category: fact
+  question: What business segments did Goldman Sachs report in its 2025 Form 10-K?
+  answer: 'Three business segments: Global Banking & Markets, Asset & Wealth Management, and Platform Solutions.'
+  evidence:
+  - ticker: GS
+    fiscal_year: 2025
+    text: 'three business segments: Global Banking & Markets, Asset & Wealth Management and Platform Solutions'
+- id: fact-13
+  category: fact
+  question: Through which business segments does Bank of America operate?
+  answer: 'Four business segments: Consumer Banking, Global Wealth & Investment Management (GWIM), Global Banking
+    and Global Markets, with remaining operations in All Other.'
+  evidence:
+  - ticker: BAC
+    fiscal_year: 2025
+    text: 'four business segments: Consumer Banking, Global Wealth & Investment Management (GWIM), Global Banking
+      and Global Markets'
+- id: fact-14
+  category: fact
+  question: What are JPMorganChase's reportable business segments?
+  answer: 'Three: Consumer & Community Banking (CCB), Commercial & Investment Bank (CIB) and Asset & Wealth Management
+    (AWM), with remaining activities in Corporate.'
+  evidence:
+  - ticker: JPM
+    fiscal_year: 2025
+    text: three reportable business segments – Consumer & Community Banking (“CCB”), Commercial & Investment Bank
+      (“CIB”) and Asset & Wealth Management (“AWM”)
+- id: fact-15
+  category: fact
+  question: How many warehouses did Costco operate worldwide at August 31, 2025, and how many were in the United
+    States?
+  answer: 914 warehouses worldwide, 629 of them in the United States.
+  value: 914
+  unit: warehouses
+  evidence:
+  - ticker: COST
+    fiscal_year: 2025
+    text: 'Costco operated 914 warehouses worldwide: 629 in the United States'
+- id: fact-16
+  category: fact
+  question: What is the annual fee for a Costco Executive membership upgrade in the U.S.?
+  answer: An additional annual fee of $65, on top of the $65 base membership fee.
+  value: 65
+  unit: USD
+  evidence:
+  - ticker: COST
+    fiscal_year: 2025
+    text: Executive membership in the U.S., for an additional annual fee of $65
+- id: fact-17
+  category: fact
+  question: How concentrated was NVIDIA's revenue among direct customers in fiscal year 2025?
+  answer: Sales to direct Customers A, B and C represented 12%, 11% and 11% of total revenue respectively, primarily
+    attributable to the Compute & Networking segment.
+  evidence:
+  - ticker: NVDA
+    fiscal_year: 2025
+    text: Sales to direct Customers A, B and C represented 12%, 11% and 11% of total revenue
+- id: fact-18
+  category: fact
+  question: By how much did Microsoft's Azure and other cloud services revenue grow in fiscal year 2025?
+  answer: 34%.
+  value: 34
+  unit: '%'
+  evidence:
+  - ticker: MSFT
+    fiscal_year: 2025
+    text: Azure and other cloud services revenue grew 34%
+- id: fact-19
+  category: fact
+  question: Why did Apple's Greater China net sales change in fiscal 2025?
+  answer: They decreased compared with 2024, primarily due to lower iPhone net sales, partially offset by higher
+    Mac net sales.
+  evidence:
+  - ticker: AAPL
+    fiscal_year: 2025
+    text: Greater China net sales decreased during 2025 compared to 2024 primarily due to lower net sales of iPhone,
+      partially offset by higher net sales of Mac
+- id: fact-20
+  category: fact
+  question: By how much did Google Cloud revenues increase from 2024 to 2025?
+  answer: $15.5 billion, primarily driven by growth in Google Cloud Platform.
+  value: 15.5
+  unit: USD billions
+  evidence:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    text: Google Cloud revenues increased $15.5 billion from 2024 to 2025
+- id: fact-21
+  category: fact
+  question: What were Target's comparable sales results for the fiscal year ended February 1, 2025, and what drove
+    them?
+  answer: Comparable sales increased 0.1 percent, driven by a 1.4 percent increase in traffic, partially offset
+    by a 1.3 percent decrease in average transaction amount.
+  value: 0.1
+  unit: '%'
+  evidence:
+  - ticker: TGT
+    fiscal_year: 2025
+    text: Comparable sales increased 0.1 percent, driven by a 1.4 percent increase in traffic
+  notes: Target calls this year 'fiscal 2024'; the corpus labels it FY2025 (period ends Feb 2025).
+- id: fact-22
+  category: fact
+  question: How much in client assets does JPMorganChase's Asset & Wealth Management business have?
+  answer: $7.1 trillion.
+  value: 7.1
+  unit: USD trillions
+  evidence:
+  - ticker: JPM
+    fiscal_year: 2025
+    text: Asset & Wealth Management, with client assets of $7.1 trillion
+- id: numeric_lookup-01
+  category: numeric_lookup
+  question: What were Apple's total net sales in fiscal 2025?
+  answer: 'Total net sales: $416,161 million.'
+  value: 416161
+  unit: USD millions
+  evidence:
+  - ticker: AAPL
+    fiscal_year: 2025
+    text: 416,161
+  xbrl:
+  - ticker: AAPL
+    fiscal_year: 2025
+    metric: revenue
+- id: numeric_lookup-02
+  category: numeric_lookup
+  question: What was Apple's diluted earnings per share for fiscal 2025?
+  answer: 'Diluted EPS: $7.46.'
+  value: 7.46
+  unit: USD
+  evidence:
+  - ticker: AAPL
+    fiscal_year: 2025
+    text: '7.46'
+  xbrl:
+  - ticker: AAPL
+    fiscal_year: 2025
+    metric: eps_diluted
+- id: numeric_lookup-03
+  category: numeric_lookup
+  question: What was Microsoft's total revenue for fiscal year 2025?
+  answer: 'Total revenue: $281,724 million.'
+  value: 281724
+  unit: USD millions
+  evidence:
+  - ticker: MSFT
+    fiscal_year: 2025
+    text: 281,724
+  xbrl:
+  - ticker: MSFT
+    fiscal_year: 2025
+    metric: revenue
+- id: numeric_lookup-04
+  category: numeric_lookup
+  question: What was Microsoft's net income for fiscal year 2025?
+  answer: 'Net income: $101,832 million.'
+  value: 101832
+  unit: USD millions
+  evidence:
+  - ticker: MSFT
+    fiscal_year: 2025
+    text: 101,832
+  xbrl:
+  - ticker: MSFT
+    fiscal_year: 2025
+    metric: net_income
+- id: numeric_lookup-05
+  category: numeric_lookup
+  question: What was NVIDIA's revenue for fiscal year 2025?
+  answer: 'Revenue: $130,497 million.'
+  value: 130497
+  unit: USD millions
+  evidence:
+  - ticker: NVDA
+    fiscal_year: 2025
+    text: 130,497
+  xbrl:
+  - ticker: NVDA
+    fiscal_year: 2025
+    metric: revenue
+- id: numeric_lookup-06
+  category: numeric_lookup
+  question: How much did NVIDIA spend on research and development in fiscal year 2025?
+  answer: 'R&D expense: $12,914 million.'
+  value: 12914
+  unit: USD millions
+  evidence:
+  - ticker: NVDA
+    fiscal_year: 2025
+    text: 12,914
+  xbrl:
+  - ticker: NVDA
+    fiscal_year: 2025
+    metric: rnd_expense
+- id: numeric_lookup-07
+  category: numeric_lookup
+  question: What were Alphabet's total revenues in 2025?
+  answer: 'Revenues: $402,836 million.'
+  value: 402836
+  unit: USD millions
+  evidence:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    text: 402,836
+  xbrl:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    metric: revenue
+- id: numeric_lookup-08
+  category: numeric_lookup
+  question: How much did Alphabet spend on purchases of property and equipment in 2025?
+  answer: 'Purchases of property and equipment: $91,447 million.'
+  value: 91447
+  unit: USD millions
+  evidence:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    text: 91,447
+  xbrl:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    metric: capex
+- id: numeric_lookup-09
+  category: numeric_lookup
+  question: What was JPMorganChase's total net revenue for 2025?
+  answer: 'Total net revenue: $182,447 million.'
+  value: 182447
+  unit: USD millions
+  evidence:
+  - ticker: JPM
+    fiscal_year: 2025
+    text: 182,447
+  xbrl:
+  - ticker: JPM
+    fiscal_year: 2025
+    metric: revenue
+- id: numeric_lookup-10
+  category: numeric_lookup
+  question: What was Bank of America's net income for 2025?
+  answer: 'Net income: $30,509 million.'
+  value: 30509
+  unit: USD millions
+  evidence:
+  - ticker: BAC
+    fiscal_year: 2025
+    text: 30,509
+  xbrl:
+  - ticker: BAC
+    fiscal_year: 2025
+    metric: net_income
+- id: numeric_lookup-11
+  category: numeric_lookup
+  question: What were Goldman Sachs's total net revenues for 2025?
+  answer: 'Total net revenues: $58,283 million.'
+  value: 58283
+  unit: USD millions
+  evidence:
+  - ticker: GS
+    fiscal_year: 2025
+    text: 58,283
+  xbrl:
+  - ticker: GS
+    fiscal_year: 2025
+    metric: revenue
+- id: numeric_lookup-12
+  category: numeric_lookup
+  question: What were Walmart's total revenues for the fiscal year ended January 31, 2025?
+  answer: 'Total revenues: $680,985 million.'
+  value: 680985
+  unit: USD millions
+  evidence:
+  - ticker: WMT
+    fiscal_year: 2025
+    text: 680,985
+  xbrl:
+  - ticker: WMT
+    fiscal_year: 2025
+    metric: revenue
+- id: numeric_lookup-13
+  category: numeric_lookup
+  question: What was Costco's total revenue for fiscal 2025?
+  answer: 'Total revenue: $275,235 million.'
+  value: 275235
+  unit: USD millions
+  evidence:
+  - ticker: COST
+    fiscal_year: 2025
+    text: 275,235
+  xbrl:
+  - ticker: COST
+    fiscal_year: 2025
+    metric: revenue
+- id: numeric_lookup-14
+  category: numeric_lookup
+  question: What was Target's diluted EPS for the fiscal year ended February 1, 2025?
+  answer: 'Diluted EPS: $8.86.'
+  value: 8.86
+  unit: USD
+  evidence:
+  - ticker: TGT
+    fiscal_year: 2025
+    text: '8.86'
+  xbrl:
+  - ticker: TGT
+    fiscal_year: 2025
+    metric: eps_diluted
+- id: numeric_lookup-15
+  category: numeric_lookup
+  question: What total revenue, net of interest expense, did Bank of America report for 2024 in its 2024 Form 10-K?
+  answer: 'As originally reported: $101,887 million.'
+  value: 101887
+  unit: USD millions
+  evidence:
+  - ticker: BAC
+    fiscal_year: 2024
+    text: 101,887
+  xbrl:
+  - ticker: BAC
+    fiscal_year: 2024
+    metric: revenue
+  notes: 'Restatement trap: the 2025 10-K restates 2024 revenue to $105,856M. The question asks for the figure as
+    reported in the 2024 filing.'
+- id: numeric_lookup-16
+  category: numeric_lookup
+  question: What diluted EPS did NVIDIA report for fiscal year 2024 in its fiscal 2024 Form 10-K?
+  answer: 'As reported (before the June 2024 10-for-1 stock split): $11.93.'
+  value: 11.93
+  unit: USD
+  evidence:
+  - ticker: NVDA
+    fiscal_year: 2024
+    text: '11.93'
+  xbrl:
+  - ticker: NVDA
+    fiscal_year: 2024
+    metric: eps_diluted
+  notes: 'Split trap: the split-adjusted figure is $1.19. An answer of $1.19 that explains the split adjustment
+    is acceptable.'
+- id: numeric_lookup-17
+  category: numeric_lookup
+  question: What was JPMorganChase's CET1 capital ratio under the Standardized approach at December 31, 2025?
+  answer: 14.6%.
+  value: 14.6
+  unit: '%'
+  evidence:
+  - ticker: JPM
+    fiscal_year: 2025
+    text: CET1 capital ratio | 14.6%
+- id: numeric_lookup-18
+  category: numeric_lookup
+  question: What was Goldman Sachs's CET1 capital ratio under the Standardized Capital Rules as of December 2025?
+  answer: 14.3% (15.1% under the Advanced Capital Rules).
+  value: 14.3
+  unit: '%'
+  evidence:
+  - ticker: GS
+    fiscal_year: 2025
+    text: our CET1 capital ratio was 14.3% under the Standardized Capital Rules
+- id: numeric_calc-01
+  category: numeric_calc
+  question: By what percentage did Apple's total net sales grow from fiscal 2024 to fiscal 2025?
+  answer: About 6.43% ($391,035M to $416,161M).
+  value: 6.43
+  unit: '%'
+  tolerance: 0.02
+  evidence:
+  - ticker: AAPL
+    fiscal_year: 2025
+    text: 416,161
+  - ticker: AAPL
+    fiscal_year: 2025
+    text: 391,035
+  xbrl:
+  - ticker: AAPL
+    fiscal_year: 2025
+    metric: revenue
+  - ticker: AAPL
+    fiscal_year: 2024
+    metric: revenue
+- id: numeric_calc-02
+  category: numeric_calc
+  question: What was Apple's gross margin percentage in fiscal 2025?
+  answer: About 46.91% (gross margin $195,201M on net sales of $416,161M).
+  value: 46.91
+  unit: '%'
+  tolerance: 0.02
+  evidence:
+  - ticker: AAPL
+    fiscal_year: 2025
+    text: 195,201
+  - ticker: AAPL
+    fiscal_year: 2025
+    text: 416,161
+  xbrl:
+  - ticker: AAPL
+    fiscal_year: 2025
+    metric: gross_profit
+  - ticker: AAPL
+    fiscal_year: 2025
+    metric: revenue
+- id: numeric_calc-03
+  category: numeric_calc
+  question: What was Microsoft's operating margin in fiscal year 2025?
+  answer: About 45.62% (operating income $128,528M on revenue of $281,724M).
+  value: 45.62
+  unit: '%'
+  tolerance: 0.02
+  evidence:
+  - ticker: MSFT
+    fiscal_year: 2025
+    text: 128,528
+  - ticker: MSFT
+    fiscal_year: 2025
+    text: 281,724
+  xbrl:
+  - ticker: MSFT
+    fiscal_year: 2025
+    metric: operating_income
+  - ticker: MSFT
+    fiscal_year: 2025
+    metric: revenue
+- id: numeric_calc-04
+  category: numeric_calc
+  question: What was NVIDIA's net profit margin in fiscal year 2025?
+  answer: About 55.85% (net income $72,880M on revenue of $130,497M).
+  value: 55.85
+  unit: '%'
+  tolerance: 0.02
+  evidence:
+  - ticker: NVDA
+    fiscal_year: 2025
+    text: 72,880
+  - ticker: NVDA
+    fiscal_year: 2025
+    text: 130,497
+  xbrl:
+  - ticker: NVDA
+    fiscal_year: 2025
+    metric: net_income
+  - ticker: NVDA
+    fiscal_year: 2025
+    metric: revenue
+- id: numeric_calc-05
+  category: numeric_calc
+  question: What percentage of Alphabet's 2025 revenues was spent on research and development?
+  answer: About 15.16% ($61,087M of $402,836M).
+  value: 15.16
+  unit: '%'
+  tolerance: 0.02
+  evidence:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    text: 61,087
+  - ticker: GOOGL
+    fiscal_year: 2025
+    text: 402,836
+  xbrl:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    metric: rnd_expense
+  - ticker: GOOGL
+    fiscal_year: 2025
+    metric: revenue
+- id: numeric_calc-06
+  category: numeric_calc
+  question: By what percentage did Costco's net income grow in fiscal 2025 compared with fiscal 2024?
+  answer: About 9.94% ($7,367M to $8,099M).
+  value: 9.94
+  unit: '%'
+  tolerance: 0.02
+  evidence:
+  - ticker: COST
+    fiscal_year: 2025
+    text: 8,099
+  - ticker: COST
+    fiscal_year: 2025
+    text: 7,367
+  xbrl:
+  - ticker: COST
+    fiscal_year: 2025
+    metric: net_income
+  - ticker: COST
+    fiscal_year: 2024
+    metric: net_income
+- id: numeric_calc-07
+  category: numeric_calc
+  question: What was Walmart's operating margin for the fiscal year ended January 31, 2025?
+  answer: About 4.31% (operating income $29,348M on total revenues of $680,985M).
+  value: 4.31
+  unit: '%'
+  tolerance: 0.02
+  evidence:
+  - ticker: WMT
+    fiscal_year: 2025
+    text: 29,348
+  - ticker: WMT
+    fiscal_year: 2025
+    text: 680,985
+  xbrl:
+  - ticker: WMT
+    fiscal_year: 2025
+    metric: operating_income
+  - ticker: WMT
+    fiscal_year: 2025
+    metric: revenue
+- id: numeric_calc-08
+  category: numeric_calc
+  question: By what percentage did JPMorganChase's net income change from 2024 to 2025?
+  answer: It decreased about 2.43% ($58,471M to $57,048M).
+  value: -2.43
+  unit: '%'
+  tolerance: 0.02
+  evidence:
+  - ticker: JPM
+    fiscal_year: 2025
+    text: 57,048
+  - ticker: JPM
+    fiscal_year: 2025
+    text: 58,471
+  xbrl:
+  - ticker: JPM
+    fiscal_year: 2025
+    metric: net_income
+  - ticker: JPM
+    fiscal_year: 2024
+    metric: net_income
+- id: numeric_calc-09
+  category: numeric_calc
+  question: By what percentage did Target's total revenue change in the fiscal year ended February 1, 2025?
+  answer: It decreased about 0.79% ($107,412M to $106,566M), driven by one less week than the prior year.
+  value: -0.79
+  unit: '%'
+  tolerance: 0.03
+  evidence:
+  - ticker: TGT
+    fiscal_year: 2025
+    text: 106,566
+  - ticker: TGT
+    fiscal_year: 2025
+    text: 107,412
+  xbrl:
+  - ticker: TGT
+    fiscal_year: 2025
+    metric: revenue
+  - ticker: TGT
+    fiscal_year: 2024
+    metric: revenue
+  notes: The filing itself states revenue decreased 0.8 percent.
+- id: numeric_calc-10
+  category: numeric_calc
+  question: By what percentage did Goldman Sachs's net revenues grow from 2024 to 2025?
+  answer: About 8.92% ($53,512M to $58,283M).
+  value: 8.92
+  unit: '%'
+  tolerance: 0.02
+  evidence:
+  - ticker: GS
+    fiscal_year: 2025
+    text: 58,283
+  - ticker: GS
+    fiscal_year: 2025
+    text: 53,512
+  xbrl:
+  - ticker: GS
+    fiscal_year: 2025
+    metric: revenue
+  - ticker: GS
+    fiscal_year: 2024
+    metric: revenue
+- id: numeric_calc-11
+  category: numeric_calc
+  question: What share of Microsoft's fiscal 2025 operating cash flow went to additions to property and equipment?
+  answer: About 47.41% ($64,551M of $136,162M).
+  value: 47.41
+  unit: '%'
+  tolerance: 0.02
+  evidence:
+  - ticker: MSFT
+    fiscal_year: 2025
+    text: 64,551
+  - ticker: MSFT
+    fiscal_year: 2025
+    text: 136,162
+  xbrl:
+  - ticker: MSFT
+    fiscal_year: 2025
+    metric: capex
+  - ticker: MSFT
+    fiscal_year: 2025
+    metric: operating_cash_flow
+- id: numeric_calc-12
+  category: numeric_calc
+  question: How much did Apple return to shareholders through share repurchases and dividends combined in fiscal
+    2025?
+  answer: 'About $104.7 billion: $89.3 billion of repurchases plus $15.4 billion of dividends and dividend equivalents.'
+  value: 104.7
+  unit: USD billions
+  tolerance: 0.01
+  evidence:
+  - ticker: AAPL
+    fiscal_year: 2025
+    text: the Company repurchased $89.3 billion of its common stock and paid dividends and dividend equivalents
+      of $15.4 billion
+- id: comparison-01
+  category: comparison
+  question: Which had higher revenue in its most recent fiscal year in the corpus (fiscal 2025), Microsoft or Alphabet,
+    and by how much?
+  answer: 'Alphabet: $402,836M vs Microsoft $281,724M, about $121.1B more. (Microsoft''s fiscal year ends June 30;
+    Alphabet''s December 31.)'
+  value: 121112
+  unit: USD millions
+  tolerance: 0.02
+  evidence:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    text: 402,836
+  - ticker: MSFT
+    fiscal_year: 2025
+    text: 281,724
+  xbrl:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    metric: revenue
+  - ticker: MSFT
+    fiscal_year: 2025
+    metric: revenue
+- id: comparison-02
+  category: comparison
+  question: Among Apple, Microsoft, NVIDIA and Alphabet, which reported the highest net income for fiscal 2025?
+  answer: Alphabet, with $132,170M (Apple $112,010M, Microsoft $101,832M, NVIDIA $72,880M).
+  evidence:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    text: 132,170
+  - ticker: AAPL
+    fiscal_year: 2025
+    text: 112,010
+  - ticker: MSFT
+    fiscal_year: 2025
+    text: 101,832
+  - ticker: NVDA
+    fiscal_year: 2025
+    text: 72,880
+  xbrl:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    metric: net_income
+  - ticker: AAPL
+    fiscal_year: 2025
+    metric: net_income
+  - ticker: MSFT
+    fiscal_year: 2025
+    metric: net_income
+  - ticker: NVDA
+    fiscal_year: 2025
+    metric: net_income
+- id: comparison-03
+  category: comparison
+  question: Did JPMorganChase or Bank of America have more employees at the end of 2025?
+  answer: 'JPMorganChase: 318,512 employees vs approximately 213,000 at Bank of America.'
+  evidence:
+  - ticker: JPM
+    fiscal_year: 2025
+    text: JPMorganChase had 318,512 employees globally
+  - ticker: BAC
+    fiscal_year: 2025
+    text: approximately 213,000 employees
+- id: comparison-04
+  category: comparison
+  question: How much did NVIDIA's revenue grow in fiscal 2025, and how did Data Center revenue growth compare?
+  answer: Revenue was $130.5 billion, up 114%; Data Center revenue grew faster, up 142%.
+  evidence:
+  - ticker: NVDA
+    fiscal_year: 2025
+    text: Revenue for fiscal year 2025 was $130.5 billion, up 114% from a year ago
+  - ticker: NVDA
+    fiscal_year: 2025
+    text: Data Center revenue for fiscal year 2025 was up 142%
+- id: comparison-05
+  category: comparison
+  question: How many times larger was Walmart's fiscal 2025 revenue than Costco's fiscal 2025 revenue?
+  answer: About 2.47x ($680,985M vs $275,235M). Note the fiscal years end at different times (January 2025 vs August
+    2025).
+  value: 2.47
+  unit: x
+  tolerance: 0.02
+  evidence:
+  - ticker: WMT
+    fiscal_year: 2025
+    text: 680,985
+  - ticker: COST
+    fiscal_year: 2025
+    text: 275,235
+  xbrl:
+  - ticker: WMT
+    fiscal_year: 2025
+    metric: revenue
+  - ticker: COST
+    fiscal_year: 2025
+    metric: revenue
+- id: comparison-06
+  category: comparison
+  question: Which had the higher CET1 capital ratio under the Standardized approach at the end of 2025, JPMorganChase
+    or Goldman Sachs?
+  answer: JPMorganChase, at 14.6%, versus 14.3% for Goldman Sachs.
+  evidence:
+  - ticker: JPM
+    fiscal_year: 2025
+    text: CET1 capital ratio | 14.6%
+  - ticker: GS
+    fiscal_year: 2025
+    text: our CET1 capital ratio was 14.3% under the Standardized Capital Rules
+- id: comparison-07
+  category: comparison
+  question: Which of Walmart, Costco and Target had the highest diluted EPS in fiscal 2025?
+  answer: Costco, at $18.21 (Target $8.86, Walmart $2.41).
+  evidence:
+  - ticker: COST
+    fiscal_year: 2025
+    text: '18.21'
+  - ticker: TGT
+    fiscal_year: 2025
+    text: '8.86'
+  - ticker: WMT
+    fiscal_year: 2025
+    text: '2.41'
+  xbrl:
+  - ticker: COST
+    fiscal_year: 2025
+    metric: eps_diluted
+  - ticker: TGT
+    fiscal_year: 2025
+    metric: eps_diluted
+  - ticker: WMT
+    fiscal_year: 2025
+    metric: eps_diluted
+- id: comparison-08
+  category: comparison
+  question: Who spent more on property and equipment in fiscal 2025, Alphabet or Microsoft, and by how much?
+  answer: 'Alphabet: $91,447M vs Microsoft''s $64,551M, about $26,896M more.'
+  value: 26896
+  unit: USD millions
+  tolerance: 0.02
+  evidence:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    text: 91,447
+  - ticker: MSFT
+    fiscal_year: 2025
+    text: 64,551
+  xbrl:
+  - ticker: GOOGL
+    fiscal_year: 2025
+    metric: capex
+  - ticker: MSFT
+    fiscal_year: 2025
+    metric: capex
+- id: comparison-09
+  category: comparison
+  question: Which bank reports more business segments, JPMorganChase or Bank of America?
+  answer: Bank of America, with four (Consumer Banking, GWIM, Global Banking, Global Markets), versus three at JPMorganChase
+    (CCB, CIB, AWM).
+  evidence:
+  - ticker: BAC
+    fiscal_year: 2025
+    text: four business segments
+  - ticker: JPM
+    fiscal_year: 2025
+    text: three reportable business segments
+- id: comparison-10
+  category: comparison
+  question: Did JPMorganChase or Bank of America grow total net revenue faster from 2024 to 2025?
+  answer: 'Bank of America: about 6.84% (using restated 2024 revenue) vs about 2.75% for JPMorganChase.'
+  evidence:
+  - ticker: JPM
+    fiscal_year: 2025
+    text: 182,447
+  - ticker: BAC
+    fiscal_year: 2025
+    text: 113,097
+  xbrl:
+  - ticker: JPM
+    fiscal_year: 2025
+    metric: revenue
+  - ticker: BAC
+    fiscal_year: 2025
+    metric: revenue
+  notes: Uses BAC's restated 2024 figure ($105,856M) from the 2025 10-K.
+- id: structured-01
+  category: structured
+  question: What was Apple's revenue in fiscal 2021?
+  answer: $365,817 million.
+  value: 365817
+  unit: USD millions
+  xbrl:
+  - ticker: AAPL
+    fiscal_year: 2021
+    metric: revenue
+  notes: Fiscal 2021 is only in the XBRL table, not in the 10-K text corpus (FY2024-2025).
+- id: structured-02
+  category: structured
+  question: By what multiple did NVIDIA's revenue grow from fiscal 2021 to fiscal 2025?
+  answer: About 7.83x ($16,675M to $130,497M).
+  value: 7.83
+  unit: x
+  tolerance: 0.02
+  xbrl:
+  - ticker: NVDA
+    fiscal_year: 2021
+    metric: revenue
+  - ticker: NVDA
+    fiscal_year: 2025
+    metric: revenue
+- id: structured-03
+  category: structured
+  question: How did Microsoft's capital expenditures in fiscal 2025 compare with fiscal 2021?
+  answer: About 3.13x higher ($20,622M to $64,551M).
+  value: 3.13
+  unit: x
+  tolerance: 0.02
+  xbrl:
+  - ticker: MSFT
+    fiscal_year: 2021
+    metric: capex
+  - ticker: MSFT
+    fiscal_year: 2025
+    metric: capex
+- id: structured-04
+  category: structured
+  question: In which year from 2021 to 2025 did Alphabet report its lowest net income?
+  answer: 2022, with $59,972 million.
+  value: 59972
+  unit: USD millions
+  xbrl:
+  - ticker: GOOGL
+    fiscal_year: 2021
+    metric: net_income
+  - ticker: GOOGL
+    fiscal_year: 2022
+    metric: net_income
+  - ticker: GOOGL
+    fiscal_year: 2023
+    metric: net_income
+  - ticker: GOOGL
+    fiscal_year: 2024
+    metric: net_income
+  - ticker: GOOGL
+    fiscal_year: 2025
+    metric: net_income
+- id: structured-05
+  category: structured
+  question: In which fiscal year from FY2021 to FY2025 did Target report its lowest net income?
+  answer: The fiscal year ended January 2023 (labelled FY2023 in this corpus; Target calls it fiscal 2022), with
+    $2,780 million.
+  value: 2780
+  unit: USD millions
+  xbrl:
+  - ticker: TGT
+    fiscal_year: 2021
+    metric: net_income
+  - ticker: TGT
+    fiscal_year: 2022
+    metric: net_income
+  - ticker: TGT
+    fiscal_year: 2023
+    metric: net_income
+  - ticker: TGT
+    fiscal_year: 2024
+    metric: net_income
+  - ticker: TGT
+    fiscal_year: 2025
+    metric: net_income
+- id: structured-06
+  category: structured
+  question: What were JPMorganChase's total assets at the end of 2021?
+  answer: About $3.74 trillion ($3,743,567 million).
+  value: 3743567
+  unit: USD millions
+  tolerance: 0.01
+  xbrl:
+  - ticker: JPM
+    fiscal_year: 2021
+    metric: total_assets
+- id: structured-07
+  category: structured
+  question: What was Goldman Sachs's diluted EPS in 2021?
+  answer: $59.45.
+  value: 59.45
+  unit: USD
+  xbrl:
+  - ticker: GS
+    fiscal_year: 2021
+    metric: eps_diluted
+- id: unanswerable-01
+  category: unanswerable
+  question: What was Tesla's total revenue in 2025?
+  answer: Not answerable from the corpus. Tesla is not in the corpus.
+  notes: The correct behaviour is to say the information is not available, not to guess.
+- id: unanswerable-02
+  category: unanswerable
+  question: What was Apple's revenue in the first quarter of fiscal 2026?
+  answer: Not answerable from the corpus. Quarterly results after fiscal 2025 are not in the corpus.
+  notes: The correct behaviour is to say the information is not available, not to guess.
+- id: unanswerable-03
+  category: unanswerable
+  question: What was JPMorganChase's gross margin in 2025?
+  answer: Not answerable from the corpus. Banks do not report gross profit or gross margin.
+  notes: The correct behaviour is to say the information is not available, not to guess.
+- id: unanswerable-04
+  category: unanswerable
+  question: How much did Costco spend on research and development in fiscal 2025?
+  answer: Not answerable from the corpus. Costco does not report an R&D expense line.
+  notes: The correct behaviour is to say the information is not available, not to guess.
+- id: unanswerable-05
+  category: unanswerable
+  question: How much revenue did Microsoft earn from OpenAI in fiscal 2025?
+  answer: Not answerable from the corpus. Not disclosed in the 10-K.
+  notes: The correct behaviour is to say the information is not available, not to guess.
+- id: unanswerable-06
+  category: unanswerable
+  question: How many iPhones did Apple sell in fiscal 2025?
+  answer: Not answerable from the corpus. Apple does not disclose unit sales.
+  notes: The correct behaviour is to say the information is not available, not to guess.
+- id: unanswerable-07
+  category: unanswerable
+  question: Which company is NVIDIA's 'Customer A'?
+  answer: Not answerable from the corpus. NVIDIA does not name the customer.
+  notes: The correct behaviour is to say the information is not available, not to guess.
+- id: unanswerable-08
+  category: unanswerable
+  question: What was Walmart's net income for the fiscal year ended January 31, 2026?
+  answer: Not answerable from the corpus. That fiscal year is not in the corpus (latest is the year ended January
+    31, 2025).
+  notes: The correct behaviour is to say the information is not available, not to guess.
+- id: unanswerable-09
+  category: unanswerable
+  question: What was Amazon Web Services revenue in 2025?
+  answer: Not answerable from the corpus. Amazon is not in the corpus.
+  notes: The correct behaviour is to say the information is not available, not to guess.
+- id: unanswerable-10
+  category: unanswerable
+  question: What was Tim Cook's total compensation in fiscal 2025?
+  answer: Not answerable from the corpus. Executive compensation is incorporated by reference from the proxy statement,
+    which is not in the corpus.
+  notes: The correct behaviour is to say the information is not available, not to guess.
+- id: unanswerable-11
+  category: unanswerable
+  question: What was Costco's net income in fiscal 2020?
+  answer: Not answerable from the corpus. Fiscal 2020 is outside both the text corpus and the XBRL table (2021-2025).
+  notes: The correct behaviour is to say the information is not available, not to guess.

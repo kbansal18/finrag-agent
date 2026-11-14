@@ -65,7 +65,34 @@ class Chunk:
 
 
 def _is_table_line(line: str) -> bool:
-    return " | " in line
+    return " | " in line or line.endswith(" |")
+
+
+# A value cell is a bare number: "$391,035", "(321)", "15.7%", "8". Years ("2025") and
+# dates ("December 31, 2025") are not values; they are what header rows are made of.
+_NUMBER_CELL = re.compile(r"[$(]?-?\$?[\d,]*\.?\d+%?\)?(?: \([a-z]\))*")
+_YEAR_CELL = re.compile(r"(19|20)\d{2}")
+
+
+def _is_value_cell(cell: str) -> bool:
+    cell = cell.strip()
+    return bool(_NUMBER_CELL.fullmatch(cell)) and not _YEAR_CELL.fullmatch(cell)
+
+
+def _table_header(rows: list[str], max_rows: int = 3) -> list[str]:
+    """Column-header rows: the multi-cell rows before the first row with values.
+
+    Financial tables often have two header rows ("Standardized | Advanced" above
+    "December 31, 2025 | December 31, 2024"); both are needed to read a value.
+    """
+    header = []
+    for row in rows:
+        cells = row.split(" | ")
+        if any(_is_value_cell(c) for c in cells[1:]):
+            break
+        if len(cells) > 1 and len(header) < max_rows:
+            header.append(row)
+    return header
 
 
 def _is_heading(line: str) -> bool:
@@ -124,28 +151,33 @@ def _split_table(rows: list[str], max_tokens: int, tok: Tokenizer) -> list[str]:
     text = "\n".join(rows)
     if tok.count(text) <= max_tokens:
         return [text]
-    header = rows[0]
-    budget = max_tokens - tok.count(header)
-    if budget < max_tokens // 4:  # pathological header: don't repeat it
-        header, budget = "", max_tokens
+    header = _table_header(rows)
+    budget = max_tokens - tok.count("\n".join(header))
+    if budget < max_tokens // 2:  # pathological header: don't repeat it
+        header, budget = [], max_tokens
+    body = [r for r in rows if r not in header]
+
     pieces: list[str] = []
-    buf: list[str] = [header] if header else []
+    buf: list[str] = []
     used = 0
-    for row in rows[1:] if header else rows:
+
+    def emit() -> None:
+        if buf:
+            pieces.append("\n".join(header + buf))
+
+    for row in body:
         n = tok.count(row)
         if n > budget:  # one giant row
-            if len(buf) > (1 if header else 0):
-                pieces.append("\n".join(buf))
+            emit()
+            buf, used = [], 0
             pieces.extend(_hard_split(row, max_tokens, tok))
-            buf, used = ([header] if header else []), 0
             continue
-        if used + n > budget and len(buf) > (1 if header else 0):
-            pieces.append("\n".join(buf))
-            buf, used = ([header] if header else []), 0
+        if used + n > budget:
+            emit()
+            buf, used = [], 0
         buf.append(row)
         used += n
-    if len(buf) > (1 if header else 0):
-        pieces.append("\n".join(buf))
+    emit()
     return pieces
 
 

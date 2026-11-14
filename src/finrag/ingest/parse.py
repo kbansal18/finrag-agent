@@ -114,18 +114,28 @@ def _cell_text(cell: Tag) -> str:
 
 
 def _table_to_text(table: Tag) -> str:
-    rows = []
+    rows: list[list[str]] = []
     for tr in table.find_all("tr"):
         cells = [c for c in (_cell_text(td) for td in tr.find_all(["td", "th"])) if c]
-        if not cells:
-            continue
+        if cells:
+            rows.append(cells)
+    # Layout tables (one column, used for positioning text) are rendered as plain lines.
+    # In data tables, one-cell rows ("Risk-based capital metrics:") get a trailing " |"
+    # so they stay part of the table instead of ending it.
+    is_data_table = any(len(r) > 1 for r in rows)
+    out = []
+    for cells in rows:
         row = " | ".join(cells)
-        # 10-K tables put "$", ")" and "%" in their own cells; glue them back on.
+        # 10-K tables put "$", ")", "%" and footnote markers like "(b)" in their own
+        # cells. Glue them back on, or every later value shifts one column right.
         row = re.sub(r"\$ \| ", "$", row)
         row = re.sub(r" \| (\)|%)", r"\1", row)
+        row = re.sub(r" \| ((?:\([a-z]\))+)(?= \||$)", r" \1", row)
         row = re.sub(r"\(\s+([\d.,]+)\s+\)", r"(\1)", row)  # "( 321 )" -> "(321)"
-        rows.append(row)
-    return "\n".join(rows)
+        if is_data_table and len(cells) == 1:
+            row += " |"
+        out.append(row)
+    return "\n".join(out)
 
 
 def html_to_text(html: bytes | str) -> str:

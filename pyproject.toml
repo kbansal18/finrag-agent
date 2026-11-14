@@ -31,6 +31,7 @@ finrag-financials = "finrag.ingest.xbrl:main"
 finrag-parse = "finrag.ingest.parse:main"
 finrag-index = "finrag.retrieval.index:main"
 finrag-search = "finrag.retrieval.retriever:main"
+finrag-eval-check = "finrag.eval.dataset:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/finrag"]

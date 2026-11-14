@@ -95,3 +95,21 @@ def test_cross_referenced_items_relocated():
     assert any(s.text.startswith("Report of Independent") for s in fs)
     exhibits = next(s for s in secs if s.item == "15")
     assert "Revenue grew" not in exhibits.text
+
+
+def test_footnote_cells_glued_and_one_cell_rows_kept_in_table():
+    html = """<table>
+      <tr><td></td><td>2025</td><td>2024</td></tr>
+      <tr><td>Risk-based capital metrics:</td></tr>
+      <tr><td>RWA</td><td>1,981,692</td><td>(b)</td><td>1,757,460</td></tr>
+    </table>"""
+    assert html_to_text(html).split("\n") == [
+        "2025 | 2024",
+        "Risk-based capital metrics: |",
+        "RWA | 1,981,692 (b) | 1,757,460",
+    ]
+
+
+def test_layout_tables_stay_plain_text():
+    html = "<table><tr><td>Item 7. MD&amp;A</td></tr><tr><td>Some text.</td></tr></table>"
+    assert html_to_text(html) == "Item 7. MD&A\nSome text."

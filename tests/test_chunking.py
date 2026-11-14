@@ -61,3 +61,18 @@ def test_fixed_chunks_overlap_and_cover_everything():
     assert {f"risk{i}." for i in range(70)} <= seen
     a, b = chunks[0].text.split(), chunks[1].text.split()
     assert a[-10:] == b[:10]  # 10-token overlap
+
+
+def test_split_table_repeats_multi_row_header_and_keeps_one_cell_rows():
+    rows = [
+        "Standardized | Advanced",
+        "(in millions) | December 31, 2025 | December 31, 2024",
+        "Risk-based capital metrics: |",
+    ] + [f"Metric{i} | ${i},000 | {i},500" for i in range(40)]
+    f = filing(("7", "MD&A", "Intro paragraph.\n" + "\n".join(rows)))
+    chunks = chunk_filing(f, "JPMorgan", SECTION, TOK)
+    table_chunks = [c for c in chunks if "Metric" in c.text]
+    assert len(table_chunks) > 1
+    header = "Standardized | Advanced\n(in millions) | December 31, 2025 | December 31, 2024\n"
+    for c in table_chunks:
+        assert header in c.text  # both header rows, in every piece of the split table
