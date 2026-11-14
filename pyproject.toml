@@ -11,11 +11,15 @@ requires-python = ">=3.10"
 # Dependencies are added only when a module actually uses them.
 dependencies = [
   "beautifulsoup4>=4.12",
+  "fastembed>=0.4",
   "lxml>=5.0",
+  "numpy>=1.26",
   "pydantic>=2.7",
   "pydantic-settings>=2.3",
   "pyyaml>=6.0",
+  "rank-bm25>=0.2.2",
   "requests>=2.32",
+  "tokenizers>=0.15",
 ]
 
 [project.optional-dependencies]
@@ -25,6 +29,8 @@ dev = ["pytest>=8.0", "ruff>=0.6"]
 finrag-download = "finrag.ingest.edgar:main"
 finrag-financials = "finrag.ingest.xbrl:main"
 finrag-parse = "finrag.ingest.parse:main"
+finrag-index = "finrag.retrieval.index:main"
+finrag-search = "finrag.retrieval.retriever:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/finrag"]
