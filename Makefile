@@ -1,4 +1,4 @@
-.PHONY: install lint format test download financials data
+.PHONY: install lint format test download financials parse data
 
 install:
 	pip install -e ".[dev]"
@@ -18,4 +18,7 @@ download:
 financials:
 	finrag-financials
 
-data: download financials
+parse:
+	finrag-parse
+
+data: download financials parse

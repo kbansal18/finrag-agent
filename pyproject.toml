@@ -10,6 +10,8 @@ readme = "README.md"
 requires-python = ">=3.10"
 # Dependencies are added only when a module actually uses them.
 dependencies = [
+  "beautifulsoup4>=4.12",
+  "lxml>=5.0",
   "pydantic>=2.7",
   "pydantic-settings>=2.3",
   "pyyaml>=6.0",
@@ -22,6 +24,7 @@ dev = ["pytest>=8.0", "ruff>=0.6"]
 [project.scripts]
 finrag-download = "finrag.ingest.edgar:main"
 finrag-financials = "finrag.ingest.xbrl:main"
+finrag-parse = "finrag.ingest.parse:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/finrag"]
