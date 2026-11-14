@@ -16,7 +16,7 @@ from functools import lru_cache
 from pathlib import Path
 
 import yaml
-from pydantic import BaseModel, Field, SecretStr, field_validator
+from pydantic import BaseModel, Field, SecretStr, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -42,6 +42,10 @@ class Settings(BaseSettings):
     def raw_dir(self) -> Path:
         return self.data_dir / "raw"
 
+    @property
+    def financials_db_path(self) -> Path:
+        return self.data_dir / "financials.db"
+
     def require_sec_user_agent(self) -> str:
         """SEC blocks requests without a contact email in the User-Agent; fail early."""
         ua = (self.sec_user_agent or "").strip()
@@ -53,20 +57,35 @@ class Settings(BaseSettings):
         return ua
 
 
+class Company(BaseModel):
+    ticker: str
+    sector: str
+
+    @field_validator("ticker")
+    @classmethod
+    def _upper(cls, v: str) -> str:
+        return v.strip().upper()
+
+
 class CorpusConfig(BaseModel):
-    """Which filings make up the corpus."""
+    """Which companies and years make up the knowledge base."""
 
     form_type: str = "10-K"
     fiscal_years: list[int] = Field(min_length=1)
-    tickers: list[str] = Field(min_length=1)
+    financials_years: list[int] | None = None  # defaults to fiscal_years
+    companies: list[Company] = Field(min_length=1)
 
-    @field_validator("tickers")
-    @classmethod
-    def _normalize_tickers(cls, v: list[str]) -> list[str]:
-        cleaned = [t.strip().upper() for t in v]
-        if len(set(cleaned)) != len(cleaned):
+    @model_validator(mode="after")
+    def _check(self) -> CorpusConfig:
+        if len(set(self.tickers)) != len(self.tickers):
             raise ValueError("duplicate tickers in corpus config")
-        return cleaned
+        if self.financials_years is None:
+            self.financials_years = list(self.fiscal_years)
+        return self
+
+    @property
+    def tickers(self) -> list[str]:
+        return [c.ticker for c in self.companies]
 
 
 def load_corpus_config(path: Path) -> CorpusConfig:

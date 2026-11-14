@@ -8,11 +8,19 @@ def test_repo_corpus_config_is_valid():
     assert cfg.tickers and cfg.fiscal_years
 
 
-def test_tickers_normalized_and_deduped(tmp_path):
+def test_tickers_normalized_deduped_and_financials_default(tmp_path):
     p = tmp_path / "c.yaml"
-    p.write_text("fiscal_years: [2024]\ntickers: [aapl, ' msft ']\n")
-    assert load_corpus_config(p).tickers == ["AAPL", "MSFT"]
-    p.write_text("fiscal_years: [2024]\ntickers: [aapl, AAPL]\n")
+    p.write_text(
+        "fiscal_years: [2024]\ncompanies:\n"
+        "  - {ticker: aapl, sector: Tech}\n  - {ticker: ' msft ', sector: Tech}\n"
+    )
+    cfg = load_corpus_config(p)
+    assert cfg.tickers == ["AAPL", "MSFT"]
+    assert cfg.financials_years == [2024]
+    p.write_text(
+        "fiscal_years: [2024]\ncompanies:\n"
+        "  - {ticker: aapl, sector: Tech}\n  - {ticker: AAPL, sector: Tech}\n"
+    )
     with pytest.raises(ValueError):
         load_corpus_config(p)
 

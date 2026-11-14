@@ -5,10 +5,8 @@ Flow: ticker -> CIK (SEC's ticker map) -> company filing history (submissions AP
 
 Design notes:
 * Pure functions (``parse_filing_table``, ``select_annual_reports``) hold the logic, so
-  it is unit-tested without network access. ``EdgarClient`` only does I/O.
+  it is unit-tested without network access. ``SecClient`` only does I/O.
 * Idempotent: files already on disk are skipped, so re-runs are cheap and safe.
-* Polite: throttled below SEC's 10 requests/second limit, with retry and backoff on
-  429/5xx responses.
 * A ``manifest.json`` records the provenance of every document (CIK, accession number,
   dates, source URL). Later stages read metadata from it, and answers can cite it.
 """
@@ -18,21 +16,16 @@ from __future__ import annotations
 import argparse
 import json
 import logging
-import time
 from collections.abc import Iterator
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
-import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
-
 from finrag.config import CorpusConfig, get_settings, load_corpus_config
+from finrag.ingest.sec_client import SecClient
 
 logger = logging.getLogger(__name__)
 
-TICKER_MAP_URL = "https://www.sec.gov/files/company_tickers.json"
 SUBMISSIONS_URL = "https://data.sec.gov/submissions/{name}"
 ARCHIVE_URL = "https://www.sec.gov/Archives/edgar/data/{cik}/{accession}/{document}"
 
@@ -112,58 +105,24 @@ def select_annual_reports(
 # --------------------------------------------------------------------------------- I/O
 
 
-class EdgarClient:
-    MIN_INTERVAL_S = 0.15  # about 7 req/s, safely under SEC's 10 req/s limit
+def iter_filing_tables(client: SecClient, cik: int) -> Iterator[dict[str, list[Any]]]:
+    """Yield the recent-filings table, then older paginated tables, lazily.
 
-    def __init__(self, user_agent: str, session: requests.Session | None = None) -> None:
-        self._session = session or requests.Session()
-        self._session.headers.update({"User-Agent": user_agent, "Accept-Encoding": "gzip, deflate"})
-        retry = Retry(
-            total=5,
-            backoff_factor=1.0,
-            status_forcelist=(429, 500, 502, 503, 504),
-            allowed_methods=("GET",),
-        )
-        self._session.mount("https://", HTTPAdapter(max_retries=retry))
-        self._last_request = 0.0
-
-    def _get(self, url: str) -> requests.Response:
-        wait = self.MIN_INTERVAL_S - (time.monotonic() - self._last_request)
-        if wait > 0:
-            time.sleep(wait)
-        self._last_request = time.monotonic()
-        resp = self._session.get(url, timeout=30)
-        resp.raise_for_status()
-        return resp
-
-    def ticker_to_cik(self) -> dict[str, int]:
-        data = self._get(TICKER_MAP_URL).json()
-        return {row["ticker"].upper(): int(row["cik_str"]) for row in data.values()}
-
-    def iter_filing_tables(self, cik: int) -> Iterator[dict[str, list[Any]]]:
-        """Yield the recent-filings table, then older paginated tables, lazily.
-
-        "recent" holds only about the last 1,000 filings. Banks file thousands of
-        prospectus supplements a year, so their older 10-Ks are only in the paginated
-        files. Laziness means we stop fetching once we have what we need.
-        """
-        data = self._get(SUBMISSIONS_URL.format(name=f"CIK{cik:010d}.json")).json()
-        yield data["filings"]["recent"]
-        for page in data["filings"].get("files", []):
-            yield self._get(SUBMISSIONS_URL.format(name=page["name"])).json()
-
-    def download(self, url: str, dest: Path) -> None:
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        tmp = dest.with_suffix(dest.suffix + ".part")
-        tmp.write_bytes(self._get(url).content)
-        tmp.replace(dest)  # atomic: a crash never leaves a half-written file behind
+    "recent" holds only about the last 1,000 filings. Banks file thousands of prospectus
+    supplements a year, so their older 10-Ks are only in the paginated files. Laziness
+    means we stop fetching once we have what we need.
+    """
+    data = client.get_json(SUBMISSIONS_URL.format(name=f"CIK{cik:010d}.json"))
+    yield data["filings"]["recent"]
+    for page in data["filings"].get("files", []):
+        yield client.get_json(SUBMISSIONS_URL.format(name=page["name"]))
 
 
 def find_annual_reports(
-    client: EdgarClient, ticker: str, cik: int, corpus: CorpusConfig
+    client: SecClient, ticker: str, cik: int, corpus: CorpusConfig
 ) -> dict[int, Filing]:
     found: dict[int, Filing] = {}
-    for table in client.iter_filing_tables(cik):
+    for table in iter_filing_tables(client, cik):
         filings = parse_filing_table(table, ticker, cik)
         for year, filing in select_annual_reports(
             filings, corpus.fiscal_years, corpus.form_type
@@ -175,7 +134,7 @@ def find_annual_reports(
 
 
 def download_corpus(corpus: CorpusConfig, raw_dir: Path, user_agent: str) -> list[dict]:
-    client = EdgarClient(user_agent)
+    client = SecClient(user_agent)
     ciks = client.ticker_to_cik()
     manifest: list[dict] = []
 

@@ -21,6 +21,7 @@ dev = ["pytest>=8.0", "ruff>=0.6"]
 
 [project.scripts]
 finrag-download = "finrag.ingest.edgar:main"
+finrag-financials = "finrag.ingest.xbrl:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/finrag"]
