@@ -121,7 +121,12 @@ class Judgment:
 
 
 def _parse_json_object(text: str) -> dict[str, Any]:
-    """Models sometimes wrap JSON in prose or code fences; take the outermost object."""
+    """Models sometimes wrap JSON in prose or code fences; take the outermost object.
+
+    Reasoning models (Qwen) may emit <think>...</think> first, which can itself contain
+    braces, so that block is removed before searching for the object.
+    """
+    text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL)
     start, end = text.find("{"), text.rfind("}")
     if start == -1 or end <= start:
         raise ValueError(f"no JSON object in judge output: {text[:200]!r}")

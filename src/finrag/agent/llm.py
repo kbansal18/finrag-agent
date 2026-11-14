@@ -56,6 +56,10 @@ class OpenAICompatibleLLM:
         self.model = model
         self.temperature = temperature  # 0 for reproducible evals
 
+    def available_models(self) -> list[str]:
+        """Model ids this API key can use (availability differs by account tier)."""
+        return sorted(m.id for m in self._client.models.list())
+
     def chat(
         self,
         messages: list[dict[str, Any]],

@@ -67,3 +67,10 @@ def test_summarize_metrics():
     assert s["accuracy"] == 1.0 and s["correct_abstention"] == 1.0
     assert s["hallucination_rate"] == 0.0 and s["citation_rate"] == 1.0
     assert s["judge_numeric_agreement"] == 1.0 and s["avg_tokens"] == 75
+
+
+def test_judge_ignores_reasoning_block_with_braces():
+    llm = FakeJudge('<think>gold is {416161}; answer says 416.2B</think>'
+                    '{"correct": true, "abstained": false, "unsupported_claims": []}')  # fmt: skip
+    j = judge(llm, q(value=1, unit="USD"), "answer", [])
+    assert j.correct and not j.hallucinated

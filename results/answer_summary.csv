@@ -1,5 +1,5 @@
 config,category,n,graded,accuracy,numeric_accuracy,correct_abstention,over_abstention,hallucination_rate,citation_rate,judge_numeric_agreement,avg_tokens,avg_llm_calls,avg_seconds,step_limit_rate,errors
-rag-120b,ALL,5,0,,,,,,,,3036,1,0.838,0,0
-rag-120b,fact,5,0,,,,,,,,3036,1,0.838,0,0
-agent-120b,ALL,5,0,,,,,,,,4408,2,6.62,0,0
-agent-120b,fact,5,0,,,,,,,,4408,2,6.62,0,0
+rag-120b,ALL,5,5,1,1,,0,0,1,1.0,3036,1,0.838,0,0
+rag-120b,fact,5,5,1,1,,0,0,1,1.0,3036,1,0.838,0,0
+agent-120b,ALL,5,5,1,1,,0,0,1,1.0,4408,2,6.62,0,0
+agent-120b,fact,5,5,1,1,,0,0,1,1.0,4408,2,6.62,0,0

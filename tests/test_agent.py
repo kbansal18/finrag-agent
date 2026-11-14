@@ -128,6 +128,13 @@ def test_citations_parsed():
     ]
 
 
+def test_answer_text_normalized():
+    from finrag.agent.agent import normalize_citations
+
+    raw = "Apple had **166,000\u202ffull\u2011time** employees \u3010S1\u3011."
+    assert normalize_citations(raw) == "Apple had 166,000 full-time employees [S1]."
+
+
 def test_full_width_citations_from_gpt_oss_are_recognized():
     assert extract_citations("a difference of $10.18 billion \u3010T1\u3011.") == ["T1"]
 

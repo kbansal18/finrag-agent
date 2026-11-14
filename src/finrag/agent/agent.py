@@ -98,8 +98,17 @@ class Answer:
 _BRACKETS = str.maketrans({"\u3010": "[", "\u3011": "]", "\uff3b": "[", "\uff3d": "]"})
 
 
+# gpt-oss also emits typographic Unicode (narrow no-break spaces, non-breaking hyphens)
+# and markdown bold despite instructions. Normalise once, so the UI, citation parsing
+# and grading all see plain text.
+_TYPOGRAPHY = str.maketrans(
+    {"\u202f": " ", "\u00a0": " ", "\u2009": " ", "\u2011": "-", "\u2010": "-"}
+)
+
+
 def normalize_citations(text: str) -> str:
-    return text.translate(_BRACKETS)
+    text = text.translate(_BRACKETS).translate(_TYPOGRAPHY)
+    return re.sub(r"\*\*(.+?)\*\*", r"\1", text)
 
 
 def extract_citations(text: str) -> list[str]:

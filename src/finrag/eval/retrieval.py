@@ -141,7 +141,7 @@ def main(argv: list[str] | None = None) -> None:
     fields = ["index", "mode", "filters", "category", "n", "recall@1", "recall@5",
               "recall@10", "mrr", "ms_per_query"]  # fmt: skip
     with (RESULTS_DIR / "retrieval_summary.csv").open("w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
+        w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore", lineterminator="\n")
         w.writeheader()
         for r in summary:
             w.writerow({k: (round(v, 4) if isinstance(v, float) else v) for k, v in r.items()})

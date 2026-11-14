@@ -41,7 +41,9 @@ CONFIGS: dict[str, tuple[str, str]] = {
     "rag-20b": ("rag", "openai/gpt-oss-20b"),
     "agent-20b": ("agent", "openai/gpt-oss-20b"),
 }
-DEFAULT_JUDGE = "qwen/qwen3.6-27b"
+# A different model family from the systems under test (gpt-oss), to limit
+# self-preference bias. Check availability with --list-models; it varies by account tier.
+DEFAULT_JUDGE = "qwen/qwen3.8-27b"
 
 
 def _load_cache(path: Path) -> dict[str, dict[str, Any]]:
@@ -106,6 +108,20 @@ def generate(config: str, questions: list[Question], sleep_s: float) -> None:
 
 
 # ------------------------------------------------------------------------------ grading
+
+
+def check_models(models: list[str]) -> None:
+    """Fail fast, before any tokens are spent, if a model is not available to this key."""
+    from finrag.agent.llm import OpenAICompatibleLLM
+
+    s = get_settings()
+    available = OpenAICompatibleLLM("", s.groq_api_key.get_secret_value()).available_models()
+    missing = [m for m in models if m not in available]
+    if missing:
+        raise SystemExit(
+            f"Not available to your API key: {missing}\nAvailable models:\n  "
+            + "\n  ".join(available)
+        )
 
 
 def grade(config: str, questions: list[Question], judge_model: str, sleep_s: float) -> None:
@@ -180,7 +196,7 @@ def report(configs: list[str], questions: list[Question]) -> None:
         print("no answers yet")
         return
     with (RESULTS / "answer_summary.csv").open("w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=list(rows[0]))
+        w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
 
@@ -202,7 +218,7 @@ def export_audit(configs: list[str], n: int, seed: int = 0) -> Path:
     sample = random.Random(seed).sample(rows, min(n, len(rows)))
     out = RESULTS / "judge_audit.csv"
     with out.open("w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["config", "qid", "answer", "judge_correct", "judge_hallucinated",
                     "human_correct", "human_hallucinated"])  # fmt: skip
         for r in sample:
@@ -220,7 +236,22 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--sleep", type=float, default=0.0, help="seconds between calls (free tier)")
     p.add_argument("--stage", choices=["all", "generate", "grade", "report", "audit"],
                    default="all")  # fmt: skip
+    p.add_argument("--list-models", action="store_true", help="show models your key can use")
     a = p.parse_args(argv)
+
+    if a.list_models:
+        from finrag.agent.llm import OpenAICompatibleLLM
+
+        key = get_settings().groq_api_key.get_secret_value()
+        print("\n".join(OpenAICompatibleLLM("", key).available_models()))
+        return
+    needed = []
+    if a.stage in ("all", "generate"):
+        needed += [CONFIGS[c][1] for c in a.configs]
+    if a.stage in ("all", "grade"):
+        needed.append(a.judge_model)
+    if needed:
+        check_models(sorted(set(needed)))
 
     questions = load_questions(a.questions)
     if a.limit:
