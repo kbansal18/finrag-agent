@@ -34,6 +34,9 @@ class Settings(BaseSettings):
     )
 
     groq_api_key: SecretStr | None = None
+    # Groq retired its Llama 3.x models in Aug 2026; gpt-oss-120b is the recommended
+    # replacement. Kept in config so the model can be swapped without code changes.
+    llm_model: str = "openai/gpt-oss-120b"
     sec_user_agent: str | None = None
     data_dir: Path = PROJECT_ROOT / "data"
     corpus_config_path: Path = PROJECT_ROOT / "config" / "corpus.yaml"

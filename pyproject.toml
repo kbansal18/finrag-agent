@@ -14,6 +14,7 @@ dependencies = [
   "fastembed>=0.4",
   "lxml>=5.0",
   "numpy>=1.26",
+  "openai>=1.40",
   "pydantic>=2.7",
   "pydantic-settings>=2.3",
   "pyyaml>=6.0",
@@ -33,6 +34,7 @@ finrag-index = "finrag.retrieval.index:main"
 finrag-search = "finrag.retrieval.retriever:main"
 finrag-eval-check = "finrag.eval.dataset:main"
 finrag-eval-retrieval = "finrag.eval.retrieval:main"
+finrag-ask = "finrag.agent.agent:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/finrag"]
