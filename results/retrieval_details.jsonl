@@ -1,0 +1,744 @@
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-01", "ranks": [16]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-02", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-03", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-04", "ranks": [3]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-05", "ranks": [9]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-06", "ranks": [13]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-07", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-08", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-09", "ranks": [8]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-10", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-11", "ranks": [2]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-12", "ranks": [12]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-13", "ranks": [2]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-14", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-15", "ranks": [3]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-16", "ranks": [6]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-17", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-18", "ranks": [16]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-19", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-20", "ranks": [2]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-21", "ranks": [19]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "fact-22", "ranks": [3]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-01", "ranks": [2]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-02", "ranks": [7]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-03", "ranks": [4]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-04", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-05", "ranks": [3]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-06", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-07", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-08", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-09", "ranks": [5]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-10", "ranks": [4]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-11", "ranks": [16]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-12", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-13", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-14", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-15", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-16", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-17", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_lookup-18", "ranks": [20]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_calc-01", "ranks": [2, 2]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_calc-02", "ranks": [3, 3]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_calc-03", "ranks": [13, 13]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_calc-04", "ranks": [12, 5]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_calc-05", "ranks": [1, 1]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_calc-06", "ranks": [8, 8]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_calc-07", "ranks": [1, 1]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_calc-08", "ranks": [4, 4]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_calc-09", "ranks": [null, null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_calc-10", "ranks": [null, null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_calc-11", "ranks": [null, null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "numeric_calc-12", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "comparison-01", "ranks": [3, 10]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "comparison-02", "ranks": [null, 20, null, 1]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "comparison-03", "ranks": [null, 16]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "comparison-04", "ranks": [8, 8]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "comparison-05", "ranks": [11, null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "comparison-06", "ranks": [null, 4]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "comparison-07", "ranks": [null, null, null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "comparison-08", "ranks": [null, null]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "comparison-09", "ranks": [19, 3]}
+{"index": "fixed", "mode": "dense", "filters": "none", "qid": "comparison-10", "ranks": [null, null]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-01", "ranks": [8]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-02", "ranks": [11]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-03", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-04", "ranks": [3]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-05", "ranks": [4]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-06", "ranks": [4]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-07", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-08", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-09", "ranks": [4]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-10", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-11", "ranks": [2]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-12", "ranks": [6]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-13", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-14", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-15", "ranks": [2]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-16", "ranks": [2]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-17", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-18", "ranks": [9]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-19", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-20", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-21", "ranks": [6]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "fact-22", "ranks": [2]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-01", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-02", "ranks": [4]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-03", "ranks": [4]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-04", "ranks": [12]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-05", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-06", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-07", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-08", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-09", "ranks": [3]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-10", "ranks": [2]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-11", "ranks": [9]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-12", "ranks": [1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-13", "ranks": [5]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-14", "ranks": [11]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-15", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-16", "ranks": [18]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-17", "ranks": [null]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-18", "ranks": [7]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-01", "ranks": [1, 1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-02", "ranks": [1, 1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-03", "ranks": [5, 5]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-04", "ranks": [6, 2]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-05", "ranks": [1, 1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-06", "ranks": [1, 1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-07", "ranks": [1, 1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-08", "ranks": [1, 1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-09", "ranks": [13, null]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-10", "ranks": [10, 10]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-11", "ranks": [null, null]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-12", "ranks": [12]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "comparison-01", "ranks": [3, 5]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "comparison-02", "ranks": [null, 9, null, 1]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "comparison-03", "ranks": [null, 6]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "comparison-04", "ranks": [3, 3]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "comparison-05", "ranks": [5, null]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "comparison-06", "ranks": [null, 3]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "comparison-07", "ranks": [null, 20, 14]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "comparison-08", "ranks": [null, null]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "comparison-09", "ranks": [8, 2]}
+{"index": "fixed", "mode": "dense", "filters": "oracle", "qid": "comparison-10", "ranks": [13, null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-01", "ranks": [2]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-02", "ranks": [4]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-03", "ranks": [4]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-04", "ranks": [11]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-05", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-06", "ranks": [8]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-07", "ranks": [5]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-08", "ranks": [2]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-09", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-10", "ranks": [null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-11", "ranks": [3]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-12", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-13", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-14", "ranks": [4]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-15", "ranks": [2]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-16", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-17", "ranks": [null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-18", "ranks": [5]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-19", "ranks": [5]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-20", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-21", "ranks": [null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "fact-22", "ranks": [8]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-01", "ranks": [5]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-02", "ranks": [3]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-03", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-04", "ranks": [null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-05", "ranks": [2]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-06", "ranks": [19]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-07", "ranks": [2]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-08", "ranks": [null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-09", "ranks": [4]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-10", "ranks": [null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-11", "ranks": [11]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-12", "ranks": [20]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-13", "ranks": [18]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-14", "ranks": [null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-15", "ranks": [null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-16", "ranks": [12]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-17", "ranks": [12]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-18", "ranks": [13]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_calc-01", "ranks": [null, null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_calc-02", "ranks": [17, 17]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_calc-03", "ranks": [7, 7]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_calc-04", "ranks": [null, null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_calc-05", "ranks": [1, 7]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_calc-06", "ranks": [19, 19]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_calc-07", "ranks": [2, null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_calc-08", "ranks": [null, null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_calc-09", "ranks": [null, null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_calc-10", "ranks": [20, 20]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_calc-11", "ranks": [null, null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "numeric_calc-12", "ranks": [null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "comparison-01", "ranks": [null, 4]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "comparison-02", "ranks": [null, null, null, null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "comparison-03", "ranks": [null, 6]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "comparison-04", "ranks": [4, 4]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "comparison-05", "ranks": [null, null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "comparison-06", "ranks": [6, 10]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "comparison-07", "ranks": [null, null, 1]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "comparison-08", "ranks": [null, null]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "comparison-09", "ranks": [11, 2]}
+{"index": "fixed", "mode": "bm25", "filters": "none", "qid": "comparison-10", "ranks": [null, null]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-01", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-02", "ranks": [2]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-03", "ranks": [2]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-04", "ranks": [7]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-05", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-06", "ranks": [5]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-07", "ranks": [3]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-08", "ranks": [2]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-09", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-10", "ranks": [15]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-11", "ranks": [2]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-12", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-13", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-14", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-15", "ranks": [2]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-16", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-17", "ranks": [11]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-18", "ranks": [4]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-19", "ranks": [2]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-20", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-21", "ranks": [null]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "fact-22", "ranks": [3]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-01", "ranks": [3]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-02", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-03", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-04", "ranks": [18]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-05", "ranks": [1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-06", "ranks": [6]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-07", "ranks": [2]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-08", "ranks": [7]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-09", "ranks": [2]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-10", "ranks": [null]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-11", "ranks": [9]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-12", "ranks": [14]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-13", "ranks": [10]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-14", "ranks": [13]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-15", "ranks": [8]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-16", "ranks": [3]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-17", "ranks": [3]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-18", "ranks": [6]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-01", "ranks": [3, 3]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-02", "ranks": [2, 2]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-03", "ranks": [2, 2]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-04", "ranks": [10, 4]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-05", "ranks": [1, 4]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-06", "ranks": [1, 1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-07", "ranks": [2, null]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-08", "ranks": [4, 4]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-09", "ranks": [16, null]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-10", "ranks": [15, 15]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-11", "ranks": [8, 8]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-12", "ranks": [null]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "comparison-01", "ranks": [null, 4]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "comparison-02", "ranks": [null, null, null, null]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "comparison-03", "ranks": [20, 3]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "comparison-04", "ranks": [2, 2]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "comparison-05", "ranks": [null, null]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "comparison-06", "ranks": [3, 5]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "comparison-07", "ranks": [12, 8, 1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "comparison-08", "ranks": [null, null]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "comparison-09", "ranks": [6, 1]}
+{"index": "fixed", "mode": "bm25", "filters": "oracle", "qid": "comparison-10", "ranks": [12, 11]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-01", "ranks": [2]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-02", "ranks": [6]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-03", "ranks": [19]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-04", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-05", "ranks": [3]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-06", "ranks": [8]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-07", "ranks": [null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-08", "ranks": [14]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-09", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-10", "ranks": [15]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-11", "ranks": [2]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-12", "ranks": [3]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-13", "ranks": [2]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-14", "ranks": [2]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-15", "ranks": [3]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-16", "ranks": [2]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-17", "ranks": [null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-18", "ranks": [8]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-19", "ranks": [2]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-20", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-21", "ranks": [null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "fact-22", "ranks": [2]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-01", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-02", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-03", "ranks": [2]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-04", "ranks": [null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-05", "ranks": [3]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-06", "ranks": [null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-07", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-08", "ranks": [null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-09", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-10", "ranks": [16]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-11", "ranks": [8]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-12", "ranks": [3]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-13", "ranks": [8]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-14", "ranks": [15]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-15", "ranks": [null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-16", "ranks": [5]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-17", "ranks": [null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-18", "ranks": [11]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-01", "ranks": [null, null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-02", "ranks": [3, 3]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-03", "ranks": [4, 4]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-04", "ranks": [null, 3]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-05", "ranks": [2, 2]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-06", "ranks": [10, 10]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-07", "ranks": [10, 10]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-08", "ranks": [8, 8]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-09", "ranks": [null, null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-10", "ranks": [15, 15]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-11", "ranks": [null, null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-12", "ranks": [null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "comparison-01", "ranks": [13, 4]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "comparison-02", "ranks": [10, null, null, 11]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "comparison-03", "ranks": [null, 6]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "comparison-04", "ranks": [7, 7]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "comparison-05", "ranks": [null, null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "comparison-06", "ranks": [15, 2]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "comparison-07", "ranks": [null, 7, 2]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "comparison-08", "ranks": [null, null]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "comparison-09", "ranks": [13, 2]}
+{"index": "fixed", "mode": "hybrid", "filters": "none", "qid": "comparison-10", "ranks": [7, null]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-01", "ranks": [3]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-02", "ranks": [3]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-03", "ranks": [10]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-04", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-05", "ranks": [2]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-06", "ranks": [5]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-07", "ranks": [9]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-08", "ranks": [9]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-09", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-10", "ranks": [4]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-11", "ranks": [2]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-12", "ranks": [2]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-13", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-14", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-15", "ranks": [2]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-16", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-17", "ranks": [null]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-18", "ranks": [7]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-19", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-20", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-21", "ranks": [16]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "fact-22", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-01", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-02", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-03", "ranks": [3]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-04", "ranks": [11]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-05", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-06", "ranks": [15]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-07", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-08", "ranks": [null]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-09", "ranks": [1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-10", "ranks": [14]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-11", "ranks": [6]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-12", "ranks": [2]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-13", "ranks": [3]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-14", "ranks": [11]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-15", "ranks": [null]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-16", "ranks": [5]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-17", "ranks": [null]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-18", "ranks": [5]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-01", "ranks": [1, 1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-02", "ranks": [1, 1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-03", "ranks": [2, 2]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-04", "ranks": [3, 1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-05", "ranks": [1, 1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-06", "ranks": [1, 1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-07", "ranks": [6, 8]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-08", "ranks": [4, 4]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-09", "ranks": [14, null]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-10", "ranks": [11, 11]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-11", "ranks": [null, null]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-12", "ranks": [15]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "comparison-01", "ranks": [16, 3]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "comparison-02", "ranks": [11, 17, 19, 20]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "comparison-03", "ranks": [null, 3]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "comparison-04", "ranks": [3, 3]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "comparison-05", "ranks": [null, null]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "comparison-06", "ranks": [16, 2]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "comparison-07", "ranks": [13, 5, 2]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "comparison-08", "ranks": [null, null]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "comparison-09", "ranks": [6, 1]}
+{"index": "fixed", "mode": "hybrid", "filters": "oracle", "qid": "comparison-10", "ranks": [3, null]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-01", "ranks": [5]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-02", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-03", "ranks": [null]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-04", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-05", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-06", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-07", "ranks": [null]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-08", "ranks": [null]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-09", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-10", "ranks": [15]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-11", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-12", "ranks": [null]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-13", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-14", "ranks": [6]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-15", "ranks": [4]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-16", "ranks": [3]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-17", "ranks": [null]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-18", "ranks": [3]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-19", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-20", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-21", "ranks": [14]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "fact-22", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-01", "ranks": [4]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-02", "ranks": [5]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-03", "ranks": [5]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-04", "ranks": [5]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-05", "ranks": [11]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-06", "ranks": [5]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-07", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-08", "ranks": [13]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-09", "ranks": [12]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-10", "ranks": [5]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-11", "ranks": [6]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-12", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-13", "ranks": [6]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-14", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-15", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-16", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-17", "ranks": [5]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_lookup-18", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_calc-01", "ranks": [4, 4]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_calc-02", "ranks": [4, 5]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_calc-03", "ranks": [6, 6]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_calc-04", "ranks": [11, 9]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_calc-05", "ranks": [2, 1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_calc-06", "ranks": [null, null]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_calc-07", "ranks": [1, 9]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_calc-08", "ranks": [17, 17]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_calc-09", "ranks": [1, 1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_calc-10", "ranks": [null, null]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_calc-11", "ranks": [null, 6]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "numeric_calc-12", "ranks": [4]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "comparison-01", "ranks": [2, null]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "comparison-02", "ranks": [null, null, null, null]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "comparison-03", "ranks": [2, 18]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "comparison-04", "ranks": [null, 1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "comparison-05", "ranks": [null, null]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "comparison-06", "ranks": [null, 1]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "comparison-07", "ranks": [null, null, 11]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "comparison-08", "ranks": [null, null]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "comparison-09", "ranks": [14, 11]}
+{"index": "section", "mode": "dense", "filters": "none", "qid": "comparison-10", "ranks": [null, null]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-01", "ranks": [3]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-02", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-03", "ranks": [16]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-04", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-05", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-06", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-07", "ranks": [null]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-08", "ranks": [null]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-09", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-10", "ranks": [8]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-11", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-12", "ranks": [14]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-13", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-14", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-15", "ranks": [3]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-16", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-17", "ranks": [null]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-18", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-19", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-20", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-21", "ranks": [7]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "fact-22", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-01", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-02", "ranks": [3]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-03", "ranks": [3]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-04", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-05", "ranks": [5]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-06", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-07", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-08", "ranks": [8]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-09", "ranks": [7]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-10", "ranks": [3]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-11", "ranks": [5]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-12", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-13", "ranks": [3]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-14", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-15", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-16", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-17", "ranks": [3]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_lookup-18", "ranks": [1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-01", "ranks": [2, 2]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-02", "ranks": [2, 3]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-03", "ranks": [3, 3]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-04", "ranks": [4, 3]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-05", "ranks": [2, 1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-06", "ranks": [6, 6]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-07", "ranks": [1, 6]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-08", "ranks": [7, 7]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-09", "ranks": [1, 1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-10", "ranks": [17, 17]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-11", "ranks": [null, 4]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "numeric_calc-12", "ranks": [2]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "comparison-01", "ranks": [2, 13]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "comparison-02", "ranks": [null, null, null, 17]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "comparison-03", "ranks": [1, 11]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "comparison-04", "ranks": [null, 1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "comparison-05", "ranks": [13, null]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "comparison-06", "ranks": [20, 1]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "comparison-07", "ranks": [null, 19, 7]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "comparison-08", "ranks": [13, null]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "comparison-09", "ranks": [7, 5]}
+{"index": "section", "mode": "dense", "filters": "oracle", "qid": "comparison-10", "ranks": [12, null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-01", "ranks": [2]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-02", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-03", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-04", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-05", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-06", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-07", "ranks": [7]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-08", "ranks": [5]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-09", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-10", "ranks": [9]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-11", "ranks": [2]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-12", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-13", "ranks": [2]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-14", "ranks": [4]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-15", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-16", "ranks": [3]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-17", "ranks": [6]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-18", "ranks": [4]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-19", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-20", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-21", "ranks": [null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "fact-22", "ranks": [2]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-01", "ranks": [14]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-02", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-03", "ranks": [null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-04", "ranks": [null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-05", "ranks": [4]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-06", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-07", "ranks": [6]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-08", "ranks": [4]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-09", "ranks": [2]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-10", "ranks": [10]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-11", "ranks": [15]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-12", "ranks": [5]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-13", "ranks": [12]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-14", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-15", "ranks": [6]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-16", "ranks": [20]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-17", "ranks": [null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_lookup-18", "ranks": [12]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_calc-01", "ranks": [null, null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_calc-02", "ranks": [4, null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_calc-03", "ranks": [null, null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_calc-04", "ranks": [null, null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_calc-05", "ranks": [1, 9]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_calc-06", "ranks": [null, null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_calc-07", "ranks": [1, null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_calc-08", "ranks": [null, null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_calc-09", "ranks": [7, 7]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_calc-10", "ranks": [20, 20]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_calc-11", "ranks": [null, null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "numeric_calc-12", "ranks": [null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "comparison-01", "ranks": [null, null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "comparison-02", "ranks": [null, null, null, null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "comparison-03", "ranks": [1, 6]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "comparison-04", "ranks": [16, 2]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "comparison-05", "ranks": [null, null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "comparison-06", "ranks": [18, 11]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "comparison-07", "ranks": [19, 3, 4]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "comparison-08", "ranks": [null, null]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "comparison-09", "ranks": [2, 1]}
+{"index": "section", "mode": "bm25", "filters": "none", "qid": "comparison-10", "ranks": [16, 20]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-01", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-02", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-03", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-04", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-05", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-06", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-07", "ranks": [4]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-08", "ranks": [4]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-09", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-10", "ranks": [2]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-11", "ranks": [2]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-12", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-13", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-14", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-15", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-16", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-17", "ranks": [4]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-18", "ranks": [4]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-19", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-20", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-21", "ranks": [null]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "fact-22", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-01", "ranks": [3]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-02", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-03", "ranks": [8]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-04", "ranks": [null]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-05", "ranks": [3]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-06", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-07", "ranks": [2]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-08", "ranks": [2]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-09", "ranks": [2]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-10", "ranks": [9]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-11", "ranks": [11]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-12", "ranks": [3]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-13", "ranks": [3]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-14", "ranks": [1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-15", "ranks": [3]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-16", "ranks": [3]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-17", "ranks": [3]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_lookup-18", "ranks": [5]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-01", "ranks": [7, 7]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-02", "ranks": [2, 12]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-03", "ranks": [null, null]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-04", "ranks": [6, 6]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-05", "ranks": [1, 6]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-06", "ranks": [2, 2]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-07", "ranks": [1, null]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-08", "ranks": [11, 11]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-09", "ranks": [2, 2]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-10", "ranks": [12, 12]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-11", "ranks": [5, null]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "numeric_calc-12", "ranks": [3]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "comparison-01", "ranks": [null, 14]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "comparison-02", "ranks": [null, null, null, null]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "comparison-03", "ranks": [1, 2]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "comparison-04", "ranks": [10, 1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "comparison-05", "ranks": [null, null]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "comparison-06", "ranks": [7, 5]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "comparison-07", "ranks": [6, 1, 2]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "comparison-08", "ranks": [13, null]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "comparison-09", "ranks": [2, 1]}
+{"index": "section", "mode": "bm25", "filters": "oracle", "qid": "comparison-10", "ranks": [12, 15]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-01", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-02", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-03", "ranks": [5]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-04", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-05", "ranks": [2]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-06", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-07", "ranks": [null]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-08", "ranks": [17]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-09", "ranks": [2]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-10", "ranks": [5]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-11", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-12", "ranks": [2]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-13", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-14", "ranks": [5]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-15", "ranks": [3]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-16", "ranks": [3]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-17", "ranks": [13]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-18", "ranks": [3]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-19", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-20", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-21", "ranks": [null]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "fact-22", "ranks": [2]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-01", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-02", "ranks": [2]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-03", "ranks": [6]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-04", "ranks": [15]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-05", "ranks": [8]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-06", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-07", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-08", "ranks": [3]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-09", "ranks": [2]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-10", "ranks": [7]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-11", "ranks": [null]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-12", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-13", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-14", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-15", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-16", "ranks": [2]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-17", "ranks": [3]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_lookup-18", "ranks": [4]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-01", "ranks": [20, 20]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-02", "ranks": [3, 8]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-03", "ranks": [null, null]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-04", "ranks": [null, 9]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-05", "ranks": [1, 2]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-06", "ranks": [19, 19]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-07", "ranks": [1, null]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-08", "ranks": [5, 5]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-09", "ranks": [1, 1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-10", "ranks": [null, null]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-11", "ranks": [6, 15]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "numeric_calc-12", "ranks": [8]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "comparison-01", "ranks": [9, 7]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "comparison-02", "ranks": [null, null, null, null]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "comparison-03", "ranks": [1, 5]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "comparison-04", "ranks": [null, 1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "comparison-05", "ranks": [null, null]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "comparison-06", "ranks": [7, 1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "comparison-07", "ranks": [null, 7, 3]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "comparison-08", "ranks": [6, null]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "comparison-09", "ranks": [7, 1]}
+{"index": "section", "mode": "hybrid", "filters": "none", "qid": "comparison-10", "ranks": [6, null]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-01", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-02", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-03", "ranks": [4]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-04", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-05", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-06", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-07", "ranks": [null]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-08", "ranks": [15]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-09", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-10", "ranks": [4]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-11", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-12", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-13", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-14", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-15", "ranks": [2]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-16", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-17", "ranks": [8]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-18", "ranks": [3]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-19", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-20", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-21", "ranks": [10]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "fact-22", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-01", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-02", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-03", "ranks": [4]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-04", "ranks": [8]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-05", "ranks": [4]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-06", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-07", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-08", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-09", "ranks": [2]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-10", "ranks": [5]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-11", "ranks": [19]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-12", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-13", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-14", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-15", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-16", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-17", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_lookup-18", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-01", "ranks": [2, 2]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-02", "ranks": [2, 6]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-03", "ranks": [11, 11]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-04", "ranks": [8, 4]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-05", "ranks": [1, 2]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-06", "ranks": [1, 1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-07", "ranks": [1, null]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-08", "ranks": [4, 4]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-09", "ranks": [1, 1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-10", "ranks": [16, 16]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-11", "ranks": [8, 20]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "numeric_calc-12", "ranks": [1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "comparison-01", "ranks": [14, 4]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "comparison-02", "ranks": [13, null, null, 10]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "comparison-03", "ranks": [1, 3]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "comparison-04", "ranks": [13, 1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "comparison-05", "ranks": [16, null]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "comparison-06", "ranks": [5, 1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "comparison-07", "ranks": [null, 9, 1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "comparison-08", "ranks": [3, null]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "comparison-09", "ranks": [3, 1]}
+{"index": "section", "mode": "hybrid", "filters": "oracle", "qid": "comparison-10", "ranks": [4, null]}
