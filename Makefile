@@ -1,4 +1,4 @@
-.PHONY: install lint format test download financials parse index data eval-check eval-retrieval
+.PHONY: install lint format test download financials parse index data eval-check eval-retrieval eval-answers
 
 install:
 	pip install -e ".[dev]"
@@ -31,3 +31,6 @@ eval-check:
 
 eval-retrieval:
 	finrag-eval-retrieval
+
+eval-answers:
+	finrag-eval-answers
