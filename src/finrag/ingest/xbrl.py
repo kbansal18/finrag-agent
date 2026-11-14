@@ -13,8 +13,11 @@ Three XBRL pitfalls this module handles, each covered by a test:
    stored, so every number is traceable.
 2. Comparatives. A 10-K repeats prior years' figures, and the ``fy`` field on a fact is
    the fiscal year of the *filing*, not the period. We key facts on the period's end date
-   instead, and when several filings report the same period we keep the latest filed
-   (which picks up restatements).
+   instead. When several filings report the same period we keep the latest filed value
+   (restated, so it compares cleanly with newer years) AND the originally reported value,
+   because the older 10-K's text quotes the original. Bank of America's FY2025 10-K, for
+   example, restated 2024 revenue from $101.9B to $105.9B. Stock splits show up the same
+   way: NVIDIA's FY2024 diluted EPS was reported as $11.93 and is $1.19 split-adjusted.
 3. Mixed durations. 10-Ks sometimes include quarterly facts. Flow metrics (revenue,
    cash flow) must span roughly one year; balance-sheet metrics must sit on a fiscal
    year-end date.
@@ -92,8 +95,12 @@ METRICS: dict[str, MetricSpec] = {
         "Total stockholders' equity at fiscal year-end", ("StockholdersEquity",), kind="instant"
     ),
     "cash": MetricSpec(
-        "Cash and cash equivalents at fiscal year-end",
-        ("CashAndCashEquivalentsAtCarryingValue",),
+        "Cash and cash equivalents at fiscal year-end (some filers only report the total "
+        "including restricted cash; see xbrl_concept)",
+        (
+            "CashAndCashEquivalentsAtCarryingValue",
+            "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+        ),
         kind="instant",
     ),
     "long_term_debt": MetricSpec(
@@ -110,7 +117,8 @@ class FactRow:
     fiscal_year: int
     period_end: str
     metric: str
-    value: float
+    value: float  # latest reported (restated / split-adjusted if a later filing changed it)
+    original_value: float  # as first reported, in the 10-K for that fiscal year
     unit: str
     xbrl_concept: str
     accession: str
@@ -158,10 +166,15 @@ def extract_annual_facts(companyfacts: dict, ticker: str, years: list[int]) -> l
     for metric, spec in METRICS.items():
         # period_end -> (concept priority, filed, entry, concept)
         best: dict[str, tuple[int, str, dict, str]] = {}
+        # (concept, period_end) -> earliest-filed entry, for the as-originally-reported value
+        first: dict[tuple[str, str], dict] = {}
         for priority, concept in enumerate(spec.concepts):
             for e in _annual_entries(us_gaap, spec, concept):
                 if spec.kind == "instant" and e["end"] not in year_ends:
                     continue
+                key = (concept, e["end"])
+                if key not in first or e.get("filed", "") < first[key].get("filed", ""):
+                    first[key] = e
                 cur = best.get(e["end"])
                 better = (
                     cur is None
@@ -186,6 +199,7 @@ def extract_annual_facts(companyfacts: dict, ticker: str, years: list[int]) -> l
                     period_end=end,
                     metric=metric,
                     value=float(e["val"]),
+                    original_value=float(first[(concept, end)]["val"]),
                     unit=spec.unit,
                     xbrl_concept=concept,
                     accession=e.get("accn", ""),
@@ -215,7 +229,8 @@ CREATE TABLE financials (
     fiscal_year   INTEGER NOT NULL,
     period_end    TEXT    NOT NULL,
     metric        TEXT    NOT NULL REFERENCES metrics(metric),
-    value         REAL    NOT NULL,
+    value         REAL    NOT NULL,  -- latest reported (restated/split-adjusted)
+    original_value REAL   NOT NULL,  -- as first reported in that year's own 10-K
     unit          TEXT    NOT NULL,
     xbrl_concept  TEXT    NOT NULL,
     accession     TEXT    NOT NULL,
@@ -243,7 +258,7 @@ def build_database(db_path: Path, companies: list[dict[str, Any]], facts: list[F
         )
         conn.executemany(
             "INSERT INTO financials VALUES "
-            "(:ticker, :fiscal_year, :period_end, :metric, :value, :unit, "
+            "(:ticker, :fiscal_year, :period_end, :metric, :value, :original_value, :unit, "
             ":xbrl_concept, :accession, :filed)",
             [f.__dict__ for f in facts],
         )
@@ -257,16 +272,16 @@ def build_financials(
     corpus: CorpusConfig, raw_dir: Path, db_path: Path, user_agent: str, refresh: bool = False
 ) -> int:
     client = SecClient(user_agent)
-    ciks = client.ticker_to_cik()
+    index = client.company_index()
     cache_dir = raw_dir / "xbrl"
     companies: list[dict[str, Any]] = []
     facts: list[FactRow] = []
 
     for company in corpus.companies:
-        cik = ciks.get(company.ticker)
-        if cik is None:
+        if company.ticker not in index:
             logger.error("%s: ticker not found in SEC ticker map, skipping", company.ticker)
             continue
+        cik, name = index[company.ticker]
 
         # Raw JSON is cached so the table can be rebuilt (e.g. after adding a metric)
         # without hitting SEC again.
@@ -281,12 +296,24 @@ def build_financials(
             {
                 "ticker": company.ticker,
                 "cik": cik,
-                "name": doc.get("entityName", company.ticker),
+                # The ticker map's name, not the facts file's entityName, which can be
+                # wrong (BAC's file says "BofA Finance LLC", a subsidiary).
+                "name": name,
                 "sector": company.sector,
             }
         )
         facts.extend(rows)
 
+        restated = [r for r in rows if r.value != r.original_value]
+        for r in restated:
+            logger.info(
+                "%s FY%d %s restated: %.4g -> %.4g",
+                company.ticker,
+                r.fiscal_year,
+                r.metric,
+                r.original_value,
+                r.value,
+            )
         found = {r.metric for r in rows}
         missing = sorted(set(METRICS) - found)
         logger.info(

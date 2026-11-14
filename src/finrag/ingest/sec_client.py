@@ -48,6 +48,10 @@ class SecClient:
         tmp.write_bytes(self.get(url).content)
         tmp.replace(dest)  # atomic: a crash never leaves a half-written file behind
 
-    def ticker_to_cik(self) -> dict[str, int]:
+    def company_index(self) -> dict[str, tuple[int, str]]:
+        """ticker -> (CIK, registrant name), from SEC's official ticker map."""
         data = self.get_json(TICKER_MAP_URL)
-        return {row["ticker"].upper(): int(row["cik_str"]) for row in data.values()}
+        return {row["ticker"].upper(): (int(row["cik_str"]), row["title"]) for row in data.values()}
+
+    def ticker_to_cik(self) -> dict[str, int]:
+        return {t: cik for t, (cik, _) in self.company_index().items()}

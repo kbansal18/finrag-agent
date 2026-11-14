@@ -30,7 +30,8 @@ def test_comparatives_keyed_by_period_and_latest_filing_wins():
     )
     rows = by_key(extract_annual_facts(d, "X", [2024, 2025]))
     assert rows[("revenue", 2024)].value == 105
-    assert rows[("revenue", 2025)].value == 120
+    assert rows[("revenue", 2024)].original_value == 100
+    assert rows[("revenue", 2025)].value == rows[("revenue", 2025)].original_value == 120
 
 
 def test_quarterly_and_non_annual_forms_are_excluded():
