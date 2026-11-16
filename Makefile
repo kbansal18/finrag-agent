@@ -1,4 +1,4 @@
-.PHONY: install lint format test download financials parse index data eval-check eval-retrieval eval-answers
+.PHONY: app install lint format test download financials parse index data eval-check eval-retrieval eval-answers
 
 install:
 	pip install -e ".[dev]"
@@ -34,3 +34,6 @@ eval-retrieval:
 
 eval-answers:
 	finrag-eval-answers
+
+app:
+	streamlit run streamlit_app.py

@@ -74,3 +74,11 @@ def test_judge_ignores_reasoning_block_with_braces():
                     '{"correct": true, "abstained": false, "unsupported_claims": []}')  # fmt: skip
     j = judge(llm, q(value=1, unit="USD"), "answer", [])
     assert j.correct and not j.hallucinated
+
+
+def test_daily_limit_detection():
+    from finrag.eval.answers import _is_daily_limit
+
+    assert _is_daily_limit("Error code: 429 - ... on tokens per day (TPD): Limit 200000")
+    assert not _is_daily_limit("Error code: 429 - ... on tokens per minute (TPM)")
+    assert not _is_daily_limit(None)

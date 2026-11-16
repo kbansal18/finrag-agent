@@ -20,6 +20,7 @@ dependencies = [
   "pyyaml>=6.0",
   "rank-bm25>=0.2.2",
   "requests>=2.32",
+  "streamlit>=1.40",
   "tokenizers>=0.15",
 ]
 

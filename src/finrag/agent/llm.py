@@ -47,6 +47,8 @@ class OpenAICompatibleLLM:
         base_url: str = GROQ_BASE_URL,
         temperature: float = 0.0,
         max_retries: int = 8,
+        max_tokens: int | None = None,
+        extra_body: dict[str, Any] | None = None,
     ) -> None:
         from openai import OpenAI
 
@@ -55,6 +57,10 @@ class OpenAICompatibleLLM:
         self._client = OpenAI(api_key=api_key, base_url=base_url, max_retries=max_retries)
         self.model = model
         self.temperature = temperature  # 0 for reproducible evals
+        # Providers count the *requested* max_tokens against output-per-minute limits, so
+        # short, structured outputs (a judge's JSON verdict) should ask for little.
+        self.max_tokens = max_tokens
+        self.extra_body = dict(extra_body or {})
 
     def available_models(self) -> list[str]:
         """Model ids this API key can use (availability differs by account tier)."""
@@ -73,7 +79,21 @@ class OpenAICompatibleLLM:
         }
         if tools:
             kwargs |= {"tools": tools, "tool_choice": tool_choice}
-        resp = self._client.chat.completions.create(**kwargs)
+        if self.max_tokens:
+            kwargs["max_tokens"] = self.max_tokens
+        if self.extra_body:
+            kwargs["extra_body"] = self.extra_body
+        try:
+            resp = self._client.chat.completions.create(**kwargs)
+        except Exception as exc:
+            # Optional parameters (e.g. reasoning_effort) are not supported by every
+            # model: drop them once and retry rather than failing the call.
+            if self.extra_body and getattr(exc, "status_code", None) == 400:
+                self.extra_body = {}
+                kwargs.pop("extra_body", None)
+                resp = self._client.chat.completions.create(**kwargs)
+            else:
+                raise
         msg = resp.choices[0].message
         calls = [
             ToolCall(tc.id, tc.function.name, tc.function.arguments)

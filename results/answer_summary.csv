@@ -1,5 +1,12 @@
 config,category,n,graded,accuracy,numeric_accuracy,correct_abstention,over_abstention,hallucination_rate,citation_rate,judge_numeric_agreement,avg_tokens,avg_llm_calls,avg_seconds,step_limit_rate,errors
-rag-120b,ALL,5,5,1,1,,0,0,1,1.0,3036,1,0.838,0,0
-rag-120b,fact,5,5,1,1,,0,0,1,1.0,3036,1,0.838,0,0
+rag-120b,ALL,40,23,0.913,0.944,,0.043,0.261,0.818,1.0,3125,1,3.908,0,0
+rag-120b,fact,22,17,0.882,0.917,,0.059,0.294,0.812,1.0,3019,1,0.893,0,0
+rag-120b,numeric_lookup,18,6,1,1,,0,0.167,0.833,1.0,3255,1,7.593,0,0
 agent-120b,ALL,5,5,1,1,,0,0,1,1.0,4408,2,6.62,0,0
 agent-120b,fact,5,5,1,1,,0,0,1,1.0,4408,2,6.62,0,0
+rag-20b,ALL,69,69,0.696,0.648,,0.261,0.087,1,0.963,3218,1,3.943,0,0
+rag-20b,comparison,10,10,0.3,0,,0.5,0.4,1,1.0,3375,1,4.806,0,0
+rag-20b,fact,22,22,0.909,0.857,,0.091,0,1,1.0,3120,1,1.551,0,0
+rag-20b,numeric_calc,12,12,0.667,0.5,,0.25,0.083,1,0.833,3222,1,4.201,0,0
+rag-20b,numeric_lookup,18,18,0.944,0.944,,0.056,0.056,1,1.0,3252,1,3.632,0,0
+rag-20b,structured,7,7,0,0,,1,0,,1.0,3207,1,10.59,0,0

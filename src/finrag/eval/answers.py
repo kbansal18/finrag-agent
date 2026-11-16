@@ -35,15 +35,26 @@ from finrag.eval.grading import judge, numeric_match
 
 RESULTS = PROJECT_ROOT / "results"
 ANSWERS_DIR = RESULTS / "answers"
+# Agent configs first: under per-day token quotas, the order decides which configs get
+# each day's budget, and the agent results are the headline comparison.
 CONFIGS: dict[str, tuple[str, str]] = {
-    "rag-120b": ("rag", "openai/gpt-oss-120b"),
     "agent-120b": ("agent", "openai/gpt-oss-120b"),
-    "rag-20b": ("rag", "openai/gpt-oss-20b"),
     "agent-20b": ("agent", "openai/gpt-oss-20b"),
+    "rag-120b": ("rag", "openai/gpt-oss-120b"),
+    "rag-20b": ("rag", "openai/gpt-oss-20b"),
 }
 # A different model family from the systems under test (gpt-oss), to limit
 # self-preference bias. Check availability with --list-models; it varies by account tier.
 DEFAULT_JUDGE = "qwen/qwen3.8-27b"
+JUDGE_MAX_TOKENS = 400
+
+
+class DailyLimitReached(RuntimeError):
+    """The provider's tokens-per-day quota is spent: retrying today is pointless."""
+
+
+def _is_daily_limit(error: str | None) -> bool:
+    return bool(error) and ("tokens per day" in error or "(TPD)" in error)
 
 
 def _load_cache(path: Path) -> dict[str, dict[str, Any]]:
@@ -100,6 +111,10 @@ def generate(config: str, questions: list[Question], sleep_s: float) -> None:
             "hit_step_limit": ans.hit_step_limit,
             "error": ans.error,
         }
+        if _is_daily_limit(ans.error):
+            del cache[q.id]  # not a real failure of the system under test
+            _save_cache(path, cache)
+            raise DailyLimitReached(f"{model}: {ans.error}")
         _save_cache(path, cache)  # after every question: interruptions lose nothing
         flag = "ERROR" if ans.error else ""
         print(f"  {i}/{len(todo)} {q.id} {ans.seconds:.1f}s {flag}")
@@ -128,7 +143,15 @@ def grade(config: str, questions: list[Question], judge_model: str, sleep_s: flo
     from finrag.agent.llm import OpenAICompatibleLLM
 
     s = get_settings()
-    judge_llm = OpenAICompatibleLLM(judge_model, s.groq_api_key.get_secret_value())
+    # The verdict is ~60 tokens of JSON. Without these settings a reasoning model asks for
+    # ~2,000 output tokens per call, which Groq's free tier (1,000 output tokens/minute)
+    # rejects outright.
+    judge_llm = OpenAICompatibleLLM(
+        judge_model,
+        s.groq_api_key.get_secret_value(),
+        max_tokens=JUDGE_MAX_TOKENS,
+        extra_body={"reasoning_effort": "none"},
+    )
     path = ANSWERS_DIR / f"{config}.jsonl"
     cache = _load_cache(path)
     by_id = {q.id: q for q in questions}
@@ -141,6 +164,8 @@ def grade(config: str, questions: list[Question], judge_model: str, sleep_s: flo
             j = judge(judge_llm, q, rec["answer"], rec["cited_texts"])
             rec["judge"] = asdict(j) | {"hallucinated": j.hallucinated, "model": judge_model}
         except Exception as exc:
+            if _is_daily_limit(str(exc)):
+                raise DailyLimitReached(f"{judge_model}: {exc}") from exc
             print(f"  judge failed on {q.id}: {exc}")
             continue
         _save_cache(path, cache)
@@ -200,8 +225,10 @@ def report(configs: list[str], questions: list[Question]) -> None:
         w.writeheader()
         w.writerows(rows)
 
-    cols = ["accuracy", "numeric_accuracy", "correct_abstention", "hallucination_rate",
-            "citation_rate", "avg_tokens", "avg_seconds", "errors"]  # fmt: skip
+    cols = [
+        "graded", "accuracy", "numeric_accuracy", "correct_abstention",
+        "hallucination_rate", "citation_rate", "avg_tokens", "avg_seconds", "errors",
+    ]  # fmt: skip
     print("| config | " + " | ".join(cols) + " |")
     print("|---" * (len(cols) + 1) + "|")
     for r in rows:
@@ -256,11 +283,26 @@ def main(argv: list[str] | None = None) -> None:
     questions = load_questions(a.questions)
     if a.limit:
         questions = questions[: a.limit]
+    # Each model has its own daily quota (free tier: 200k tokens/model/day). When one is
+    # spent, skip only the work that needs that model, so every quota is used each day.
+    exhausted: set[str] = set()
     for config in a.configs:
-        if a.stage in ("all", "generate"):
-            generate(config, questions, a.sleep)
-        if a.stage in ("all", "grade"):
-            grade(config, questions, a.judge_model, a.sleep)
+        model = CONFIGS[config][1]
+        if a.stage in ("all", "generate") and model not in exhausted:
+            try:
+                generate(config, questions, a.sleep)
+            except DailyLimitReached:
+                print(f"  daily quota spent for {model}; skipping its remaining configs")
+                exhausted.add(model)
+        if a.stage in ("all", "grade") and a.judge_model not in exhausted:
+            try:
+                grade(config, questions, a.judge_model, a.sleep)
+            except DailyLimitReached:
+                print(f"  daily quota spent for judge {a.judge_model}; grading resumes next run")
+                exhausted.add(a.judge_model)
+    if exhausted:
+        print(f"\nQuota reached for: {', '.join(sorted(exhausted))}. Progress is saved; "
+              "rerun the same command tomorrow.")  # fmt: skip
     if a.stage in ("all", "report"):
         report(a.configs, load_questions(a.questions))
     if a.stage == "audit":

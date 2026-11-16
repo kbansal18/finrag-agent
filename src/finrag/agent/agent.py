@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import re
 import time
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -131,7 +132,13 @@ def _assistant_message(resp: LLMResponse) -> dict[str, Any]:
     return msg
 
 
-def answer_agent(question: str, llm: LLM, toolbox: Toolbox) -> Answer:
+def answer_agent(
+    question: str,
+    llm: LLM,
+    toolbox: Toolbox,
+    on_step: Callable[[Step], None] | None = None,
+) -> Answer:
+    """Run the tool loop. ``on_step`` is called after each tool call (the UI streams it)."""
     t0 = time.perf_counter()
     messages: list[dict[str, Any]] = [
         {"role": "system", "content": AGENT_SYSTEM},
@@ -139,7 +146,7 @@ def answer_agent(question: str, llm: LLM, toolbox: Toolbox) -> Answer:
     ]
     ans = Answer(question, "", "agent", llm.model, toolbox.sources, [])
     try:
-        _agent_loop(messages, llm, toolbox, ans)
+        _agent_loop(messages, llm, toolbox, ans, on_step)
     except Exception as exc:  # API failures become a recorded error, not a crash
         ans.error = f"{type(exc).__name__}: {exc}"
     ans.text = normalize_citations(ans.text)
@@ -148,7 +155,13 @@ def answer_agent(question: str, llm: LLM, toolbox: Toolbox) -> Answer:
     return ans
 
 
-def _agent_loop(messages: list[dict[str, Any]], llm: LLM, toolbox: Toolbox, ans: Answer) -> None:
+def _agent_loop(
+    messages: list[dict[str, Any]],
+    llm: LLM,
+    toolbox: Toolbox,
+    ans: Answer,
+    on_step: Callable[[Step], None] | None = None,
+) -> None:
     tools = toolbox.specs()
     for _ in range(MAX_STEPS):
         resp = llm.chat(messages, tools=tools)
@@ -162,9 +175,10 @@ def _agent_loop(messages: list[dict[str, Any]], llm: LLM, toolbox: Toolbox, ans:
         for call in resp.tool_calls:
             ts = time.perf_counter()
             result = toolbox.execute(call.name, call.arguments)
-            ans.steps.append(
-                Step(call.name, call.arguments, result[:300], time.perf_counter() - ts)
-            )
+            step = Step(call.name, call.arguments, result[:300], time.perf_counter() - ts)
+            ans.steps.append(step)
+            if on_step:
+                on_step(step)
             messages.append({"role": "tool", "tool_call_id": call.id, "content": result})
     else:
         # Step budget spent: force a final answer from what has been gathered.
