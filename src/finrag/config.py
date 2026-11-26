@@ -39,6 +39,10 @@ class Settings(BaseSettings):
     llm_model: str = "openai/gpt-oss-120b"
     sec_user_agent: str | None = None
     data_dir: Path = PROJECT_ROOT / "data"
+    # Where a fresh deployment downloads the prebuilt index (see finrag.data_bundle).
+    # Not secret: it is a public GitHub Release asset. The checksum pins the exact file.
+    data_bundle_url: str | None = None
+    data_bundle_sha256: str | None = None
     corpus_config_path: Path = PROJECT_ROOT / "config" / "corpus.yaml"
 
     @property

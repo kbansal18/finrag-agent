@@ -4,6 +4,7 @@
 
 # Data is rebuilt by `make download`; too large for git
 data/
+dist/
 
 # Python
 __pycache__/

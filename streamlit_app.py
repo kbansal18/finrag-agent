@@ -25,6 +25,7 @@ from finrag.agent.agent import Answer, Step, answer_agent, answer_rag  # noqa: E
 from finrag.agent.llm import OpenAICompatibleLLM  # noqa: E402
 from finrag.agent.tools import Toolbox  # noqa: E402
 from finrag.config import PROJECT_ROOT, get_settings  # noqa: E402
+from finrag.data_bundle import ensure_data, is_ready  # noqa: E402
 from finrag.retrieval.embeddings import FastEmbedder  # noqa: E402
 from finrag.retrieval.retriever import Retriever  # noqa: E402
 from finrag.ui import answer_markdown, describe_step, read_csv, retrieval_ladder  # noqa: E402
@@ -57,10 +58,18 @@ def load_llm(model: str) -> OpenAICompatibleLLM:
     return OpenAICompatibleLLM(model, settings.groq_api_key.get_secret_value())
 
 
+@st.cache_resource(show_spinner="First start: downloading the search index (~15 MB)...")
+def prepare_data() -> bool:
+    """On a fresh deployment, fetch the prebuilt index once; locally it already exists."""
+    try:
+        ensure_data(settings.data_dir, settings.data_bundle_url, settings.data_bundle_sha256)
+    except Exception as exc:  # shown in the UI below
+        st.session_state.data_error = str(exc)
+    return is_ready(settings.data_dir)
+
+
 def data_ready() -> bool:
-    return (settings.data_dir / "index" / "section" / "meta.json").exists() and (
-        settings.financials_db_path.exists()
-    )
+    return prepare_data()
 
 
 # ------------------------------------------------------------------------------ sidebar
@@ -118,8 +127,9 @@ def render_answer(ans: Answer) -> None:
 with ask_tab:
     if not data_ready():
         st.error(
-            "Search index not found. Locally, run `make data`. On Streamlit Cloud, the "
-            "app downloads it on start (see README, Deployment)."
+            "Search index not available. Locally, run `make data`. On Streamlit Cloud, set "
+            "DATA_BUNDLE_URL and DATA_BUNDLE_SHA256 in the app's secrets (see README). "
+            + st.session_state.get("data_error", "")
         )
         st.stop()
     if settings.groq_api_key is None:

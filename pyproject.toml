@@ -37,6 +37,7 @@ finrag-eval-check = "finrag.eval.dataset:main"
 finrag-eval-retrieval = "finrag.eval.retrieval:main"
 finrag-ask = "finrag.agent.agent:main"
 finrag-eval-answers = "finrag.eval.answers:main"
+finrag-package-data = "finrag.data_bundle:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/finrag"]
