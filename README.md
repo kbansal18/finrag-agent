@@ -22,8 +22,9 @@ hallucination across configurations.
 - **The gain is all on multi-step questions.** On single-filing lookups the two tie
   (35 vs 37 of 40). On calculations, cross-company comparisons and multi-year questions
   the agent gets **28/29 vs 14/29**.
-- **A small model with tools beats a 6x larger model without them**: agent-20b reaches
-  78.3% vs 73.9% for RAG-120b.
+- **Tools only pay off with a capable model.** The 120b agent beats the 20b agent on 9
+  questions and loses none (p = 0.004), while the 20b agent's edge over plain RAG
+  (78.3% vs 69.6%) is not statistically distinguishable from noise (p = 0.39).
 - **Low hallucination, safe failures**: 5% of agent answers contain a claim not supported
   by their citations; all 11 unanswerable questions are correctly declined. RAG's misses
   are mostly "not available" refusals (25% over-abstention), not invented numbers.
@@ -93,12 +94,19 @@ once per company.
 | Config | Accuracy | Numeric acc. | Correct abstention | Over-abstention | Hallucination | Citations | Tokens/q |
 |---|---|---|---|---|---|---|---|
 | **agent-120b** | **91.3%** | **92.6%** | 100% | 0% | **5.0%** | 100% | 5,001 |
-| agent-20b | 78.3% | 77.8% | 100% | 1.4% | 10.3% | 91.2% | 6,054 |
+| agent-20b | 78.3% | 77.8% | 100% | 1.4% | 11.3% | 91.2% | 6,144 |
 | rag-120b | 73.9% | 68.5% | 100% | 24.6% | 6.2% | 98.1% | 3,150 |
-| rag-20b* | 69.6% | 64.8% | n/a | 26.1% | 8.7% | 100% | 3,218 |
+| rag-20b | 69.6% | 64.8% | 100% | 26.1% | 7.5% | 100% | 3,207 |
 
-\*rag-20b: 69 of 80 questions graded so far (agent-20b: 78 of 80); the rest are pending
-the provider's daily quota.
+All four configurations were run on all 80 questions. Paired significance (exact McNemar,
+counting questions one system got right and the other wrong):
+
+| Comparison | Wins each way | p |
+|---|---|---|
+| agent-120b vs rag-120b | 18 vs 6 | **0.023** |
+| agent-120b vs agent-20b | 9 vs 0 | **0.004** |
+| agent-20b vs rag-20b | 20 vs 14 | 0.39 |
+| agent-20b vs rag-120b | 17 vs 14 | 0.72 |
 
 Agent vs RAG by category (gpt-oss-120b):
 

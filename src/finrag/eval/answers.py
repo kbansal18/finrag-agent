@@ -254,10 +254,15 @@ def summarize(records: list[dict[str, Any]], questions: dict[str, Question]) -> 
     }
 
 
-def report(configs: list[str], questions: list[Question]) -> None:
+def report(questions: list[Question]) -> None:
+    """Summarize every config with saved answers, not just the ones run this time.
+
+    A run limited with --configs must not drop the other configs from the summary file
+    the app and README read.
+    """
     qmap = {q.id: q for q in questions}
     rows = []
-    for config in configs:
+    for config in CONFIGS:
         records = list(_load_cache(ANSWERS_DIR / f"{config}.jsonl").values())
         if not records:
             continue
@@ -357,7 +362,7 @@ def main(argv: list[str] | None = None) -> None:
         print(f"\nQuota reached for: {', '.join(sorted(exhausted))}. Progress is saved; "
               "rerun the same command tomorrow.")  # fmt: skip
     if a.stage in ("all", "report"):
-        report(a.configs, load_questions(a.questions))
+        report(load_questions(a.questions))
     if a.stage == "audit":
         print(f"Wrote {export_audit(a.configs, 25)}: fill in the human_* columns")
 
