@@ -135,6 +135,15 @@ def test_answer_text_normalized():
     assert normalize_citations(raw) == "Apple had 166,000 full-time employees [S1]."
 
 
+def test_spaced_and_line_range_citations_from_gpt_oss():
+    from finrag.agent.agent import normalize_citations
+
+    text = "EPS was $7.46 [S2†L13-L16][S3†L31-L34]; segments are X [ S1 ][ T1 ]."
+    assert extract_citations(text) == ["S2", "S3", "S1", "T1"]
+    assert normalize_citations(text) == "EPS was $7.46 [S2][S3]; segments are X [S1][T1]."
+    assert extract_citations("Banks (CCB) and [note] and [S1 and more]") == []
+
+
 def test_full_width_citations_from_gpt_oss_are_recognized():
     assert extract_citations("a difference of $10.18 billion \u3010T1\u3011.") == ["T1"]
 
@@ -199,3 +208,20 @@ def test_api_failure_is_recorded_not_raised(retriever, db):
     ans = answer_agent("?", FailingLLM(), Toolbox(retriever, db))
     assert ans.error and "413" in ans.error and ans.text == ""
     assert answer_rag("?", FailingLLM(), retriever).error
+
+
+def test_replaying_recorded_steps_reproduces_source_ids(retriever, db):
+    """The citation repair depends on this: same tool calls in order -> same ids."""
+    s1 = call("search_filings", query="net sales", tickers=["AAPL"])
+    s2 = call("search_filings", query="Azure growth", tickers=["MSFT"])
+    sql = call("query_financials", sql="SELECT value FROM financials")
+    llm = ScriptedLLM([LLMResponse("", [s1, s2, sql]), LLMResponse("Done [S2][T1].")])
+    original = answer_agent("?", llm, Toolbox(retriever, db))
+
+    replay = Toolbox(retriever, db)
+    for st in original.steps:
+        replay.execute(st.tool, st.arguments)
+    assert {k: v.chunk_id for k, v in replay.sources.items()} == {
+        k: v.chunk_id for k, v in original.sources.items()
+    }
+    assert replay.sources["S2"].text == "Azure grew 34%"

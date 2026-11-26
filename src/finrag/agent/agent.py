@@ -67,7 +67,9 @@ only the context passages below.
 
 {GROUNDING_RULES}"""
 
-_CITATION = re.compile(r"\[((?:[ST]\d+)(?:\s*,\s*[ST]\d+)*)\]")
+_BRACKET = re.compile(r"\[([^\[\]]{1,80})\]")
+# One source id with optional "†..." suffix (gpt-oss writes [S2†L13-L16]).
+_CITE_ID = re.compile(r"([ST]\d+)(?:†[^,\]]*)?")
 
 
 @dataclass
@@ -107,16 +109,29 @@ _TYPOGRAPHY = str.maketrans(
 )
 
 
+def _citation_ids(content: str) -> list[str] | None:
+    """Source ids if a bracket holds only citations ("S1", " S1 ", "S2†L13-L16, T1")."""
+    ids = _CITE_ID.findall(content)
+    leftover = _CITE_ID.sub("", content).replace(",", "").strip()
+    return ids if ids and not leftover else None
+
+
 def normalize_citations(text: str) -> str:
+    """Plain text with canonical citations: "[ S1 ]" and "[S2†L13-L16]" become "[S1]"."""
     text = text.translate(_BRACKETS).translate(_TYPOGRAPHY)
-    return re.sub(r"\*\*(.+?)\*\*", r"\1", text)
+    text = re.sub(r"\*\*(.+?)\*\*", r"\1", text)
+
+    def canon(m: re.Match[str]) -> str:
+        ids = _citation_ids(m.group(1))
+        return "".join(f"[{i}]" for i in ids) if ids else m.group(0)
+
+    return _BRACKET.sub(canon, text)
 
 
 def extract_citations(text: str) -> list[str]:
-    text = normalize_citations(text)
     ids: list[str] = []
-    for group in _CITATION.findall(text):
-        for sid in re.split(r"\s*,\s*", group):
+    for content in _BRACKET.findall(normalize_citations(text)):
+        for sid in _citation_ids(content) or []:
             if sid not in ids:
                 ids.append(sid)
     return ids
@@ -193,16 +208,21 @@ def _agent_loop(
         ans.text = resp.content
 
 
-def answer_rag(question: str, llm: LLM, retriever: Retriever) -> Answer:
-    t0 = time.perf_counter()
+def rag_sources(question: str, retriever: Retriever) -> dict[str, Source]:
+    """The passages plain RAG puts in context, with ids S1..S8. Deterministic."""
     sources: dict[str, Source] = {}
-    blocks = []
     for i, r in enumerate(retriever.search(question, k=RAG_K), 1):
         c = r.chunk
         sid = f"S{i}"
         label = f"{c.ticker} FY{c.fiscal_year} 10-K, Item {c.item}: {c.item_title}"
         sources[sid] = Source(sid, "filing", label, c.text, c.url, c.chunk_id)
-        blocks.append(f"[{sid}] {label}\n{c.text}")
+    return sources
+
+
+def answer_rag(question: str, llm: LLM, retriever: Retriever) -> Answer:
+    t0 = time.perf_counter()
+    sources = rag_sources(question, retriever)
+    blocks = [f"[{sid}] {s.label}\n{s.text}" for sid, s in sources.items()]
     messages = [
         {"role": "system", "content": RAG_SYSTEM},
         {

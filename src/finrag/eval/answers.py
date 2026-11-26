@@ -122,6 +122,55 @@ def generate(config: str, questions: list[Question], sleep_s: float) -> None:
             time.sleep(sleep_s)
 
 
+# ------------------------------------------------------------------------------- repair
+
+
+def repair(config: str, questions: list[Question]) -> int:
+    """Re-parse citations in cached answers, with no LLM calls.
+
+    An early parser missed gpt-oss citation formats ("[ S1 ]", "[S2†L13-L16]"), so some
+    correctly cited answers were stored as citing nothing, and the judge then flagged
+    their facts as unsupported. Sources are rebuilt deterministically: plain RAG by
+    re-running retrieval, the agent by replaying its recorded tool calls in order, which
+    reproduces the same source ids. Records whose citations change are re-graded.
+    """
+    from finrag.agent.agent import extract_citations, normalize_citations, rag_sources
+    from finrag.agent.tools import Toolbox
+    from finrag.retrieval.embeddings import FastEmbedder
+    from finrag.retrieval.retriever import Retriever
+
+    s = get_settings()
+    retriever = Retriever.load(s.data_dir / "index" / "section", FastEmbedder())
+    by_id = {q.id: q for q in questions}
+    path = ANSWERS_DIR / f"{config}.jsonl"
+    cache = _load_cache(path)
+    mode = CONFIGS[config][0]
+    changed = 0
+    for rec in cache.values():
+        if rec.get("error") or not rec.get("answer"):
+            continue
+        text = normalize_citations(rec["answer"])
+        ids = extract_citations(text)
+        if text == rec["answer"] and ids == rec["cited"]:
+            continue
+        if mode == "rag":
+            sources = rag_sources(by_id[rec["qid"]].question, retriever)
+        else:
+            toolbox = Toolbox(retriever, s.financials_db_path)
+            for st in rec["steps"]:
+                toolbox.execute(st["tool"], st["arguments"])
+            sources = toolbox.sources
+        cited = [i for i in ids if i in sources]
+        if cited != rec["cited"]:
+            rec.pop("judge", None)  # verdict was based on the wrong sources
+            rec.pop("numeric_match", None)
+            changed += 1
+        rec |= {"answer": text, "cited": cited, "cited_texts": [sources[i].text for i in cited]}
+    _save_cache(path, cache)
+    print(f"[{config}] repaired citations in {changed} answers (queued for re-grading)")
+    return changed
+
+
 # ------------------------------------------------------------------------------ grading
 
 
@@ -261,7 +310,7 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--judge-model", default=DEFAULT_JUDGE)
     p.add_argument("--limit", type=int, help="only the first N questions (smoke test)")
     p.add_argument("--sleep", type=float, default=0.0, help="seconds between calls (free tier)")
-    p.add_argument("--stage", choices=["all", "generate", "grade", "report", "audit"],
+    p.add_argument("--stage", choices=["all", "repair", "generate", "grade", "report", "audit"],
                    default="all")  # fmt: skip
     p.add_argument("--list-models", action="store_true", help="show models your key can use")
     a = p.parse_args(argv)
@@ -285,6 +334,10 @@ def main(argv: list[str] | None = None) -> None:
         questions = questions[: a.limit]
     # Each model has its own daily quota (free tier: 200k tokens/model/day). When one is
     # spent, skip only the work that needs that model, so every quota is used each day.
+    if a.stage == "repair":
+        for config in a.configs:
+            repair(config, load_questions(a.questions))
+        return
     exhausted: set[str] = set()
     for config in a.configs:
         model = CONFIGS[config][1]
