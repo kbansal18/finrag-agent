@@ -11,6 +11,7 @@ Two kinds of config, kept separate on purpose:
 
 from __future__ import annotations
 
+import os
 import re
 from functools import lru_cache
 from pathlib import Path
@@ -19,7 +20,25 @@ import yaml
 from pydantic import BaseModel, Field, SecretStr, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+def find_project_root(module_file: Path, cwd: Path, env_root: str | None) -> Path:
+    """Locate the repository root (where data/, results/ and eval/ live).
+
+    With an editable install (local development), this file sits at
+    <repo>/src/finrag/config.py, so the root is two levels up. With a regular install
+    (Streamlit Community Cloud installs requirements.txt), it sits in site-packages and
+    two levels up is a read-only system folder; there the app's working directory, the
+    repo checkout, is the root. FINRAG_ROOT overrides both.
+    """
+    if env_root:
+        return Path(env_root)
+    candidate = module_file.resolve().parents[2]
+    if (candidate / "pyproject.toml").exists():
+        return candidate
+    return cwd
+
+
+PROJECT_ROOT = find_project_root(Path(__file__), Path.cwd(), os.environ.get("FINRAG_ROOT"))
 
 _EMAIL_RE = re.compile(r"[^@\s]+@[^@\s]+\.[^@\s]+")
 
