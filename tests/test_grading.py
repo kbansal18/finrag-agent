@@ -82,3 +82,11 @@ def test_daily_limit_detection():
     assert _is_daily_limit("Error code: 429 - ... on tokens per day (TPD): Limit 200000")
     assert not _is_daily_limit("Error code: 429 - ... on tokens per minute (TPM)")
     assert not _is_daily_limit(None)
+
+
+def test_cohen_kappa():
+    from finrag.eval.answers import cohen_kappa
+
+    assert cohen_kappa([True, False, True, False], [True, False, True, False]) == 1.0
+    assert cohen_kappa([True, True, False, False], [True, False, True, False]) == 0.0
+    assert cohen_kappa([], []) is None

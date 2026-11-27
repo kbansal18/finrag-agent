@@ -1,0 +1,119 @@
+#,question,gold_answer,system_answer,cited_sources,human_correct,human_hallucinated,config,qid
+1,What diluted EPS did NVIDIA report for fiscal year 2024 in its fiscal 2024 Form 10-K?,As reported (before the June 2024 10-for-1 stock split): $11.93.,NVIDIA reported diluted earnings per share of $11.93 for fiscal year 2024[S2],"Fiscal Year 2024 Summary
+Year Ended |
+Jan 28, 2024 | Jan 29, 2023 | Change
+($ in millions, except per share data) |
+Revenue | $60,922 | $26,974 | Up 126%
+Gross margin | 72.7% | 56.9% | Up 15.8 pts
+Operating expenses | $11,329 | $11,132 | Up 2%
+Operating income | $32,972 | $4,224 | Up 681%
+Net income | $29,760 | $4,368 | Up 581%
+Net income per diluted share | $11.93 | $1.74 | Up 586%
+We specialize ",TRUE,FALSE,rag-120b,numeric_lookup-16
+2,"How much did NVIDIA's revenue grow in fiscal 2025, and how did Data Center revenue growth compare?","Revenue was $130.5 billion, up 114%; Data Center revenue grew faster, up 142%.","NVIDIA’s total revenue more than doubled in fiscal 2025, rising from $60.9 billion in FY 2024 to $130.5 billion in FY 2025 – an increase of $69.6 billion, or about 114% year-over-year[S5].  
+
+By contrast, Data Center revenue grew even faster, climbing roughly 142% compared with the prior year[S1].","Reportable Segments
+Revenue by Reportable Segments
+Year Ended |
+Jan 26, 2025 | Jan 28, 2024 | $ Change% Change
+($ in millions) |
+Compute & Networking | $116,193 | $47,405 | $68,788 | 145%
+Graphics | 14,304 | 13,517 | 787 | 6%
+Total | $130,497 | $60,922 | $69,575 | 114%
+Operating Income by Reportable Segments
+Year Ended |
+Jan 26, 2025 | Jan 28, 2024 | $ Change% Change
+($ in millions) |
+Compute & Ne
+---
+Data Center revenue for fiscal year 2025 was up 142% from a year ago. The strong year-on-year growth was driven by demand for our Hopper architecture accelerated computing platform used for large language models, recommendation engines, and generative AI applications. We began shipping production systems of the Blackwell architecture in the fourth quarter of fiscal year 2025.
+Gaming revenue for fi",TRUE,FALSE,rag-120b,comparison-04
+3,"What were Target's comparable sales results for the fiscal year ended February 1, 2025, and what drove them?","Comparable sales increased 0.1 percent, driven by a 1.4 percent increase in traffic, partially offset by a 1.3 percent decrease in average transaction amount.","Target reported that comparable sales rose 0.1 % for the fiscal year ended February 1, 2025[S2].  
+
+The modest gain was driven by a 1.4 % increase in the number of transactions (traffic) that was partially offset by a 1.3 % decline in average transaction amount.  Stores-originated comparable sales fell 1.6 %, while digitally-originated comparable sales grew 7.5 %, providing the net positive change[S2].","Comparable Sales | 2024 | 2023 | 2022
+Comparable sales change | 0.1% | (3.7)% | 2.2%
+Drivers of change in comparable sales |
+Number of transactions (traffic) | 1.4 | (2.4) | 2.1
+Average transaction amount | (1.3) | (1.4) | 0.1
+Comparable Sales by Channel | 2024 | 2023 | 2022
+Stores originated comparable sales change | (1.6)% | (3.5)% | 2.4%
+Digitally originated comparable sales change | 7.5 | (4.8",TRUE,FALSE,agent-120b,fact-21
+4,"Which had higher revenue in its most recent fiscal year in the corpus (fiscal 2025), Microsoft or Alphabet, and by how much?","Alphabet: $402,836M vs Microsoft $281,724M, about $121.1B more. (Microsoft's fiscal year ends June 30; Alphabet's December 31.)","Alphabet had the higher revenue in fiscal 2025, reporting $402.836 billion versus Microsoft’s $281.724 billion – a difference of $121.112 billion. [T1]","{""sql"": ""SELECT ticker, fiscal_year, value FROM financials WHERE ticker IN ('MSFT','GOOGL') AND metric='revenue' AND fiscal_year=2025"", ""columns"": [""ticker"", ""fiscal_year"", ""value""], ""rows"": [[""GOOGL"", 2025, 402836000000.0], [""MSFT"", 2025, 281724000000.0]], ""truncated"": false}",TRUE,FALSE,agent-20b,comparison-01
+5,How much in client assets does JPMorganChase's Asset & Wealth Management business have?,$7.1 trillion.,JPMorgan Chase’s Asset & Wealth Management business has client assets of about $7.1 trillion. [S2],"ASSET & WEALTH MANAGEMENT
+Asset & Wealth Management, with client assets of $7.1 trillion, is a global leader in investment and wealth management. Asset Management Offers multi-asset investment management solutions across equities, fixed income, alternatives and money market funds to institutional and retail investors providing for a broad range of clients’ investment needs. Global Private Bank Pro",TRUE,FALSE,rag-20b,fact-22
+6,What are Apple's reportable segments?,"Americas, Europe, Greater China, Japan and Rest of Asia Pacific. Apple manages its business primarily on a geographic basis.","Apple’s reportable segments are the Americas, Europe, Greater China, Japan, and Rest of Asia Pacific. [S1]","Note 13 – Segment Information and Geographic Data
+The Company manages its business primarily on a geographic basis. The Company’s reportable segments consist of the Americas, Europe, Greater China, Japan and Rest of Asia Pacific. Americas includes both North and South America. Europe includes European countries, as well as India, the Middle East and Africa. Greater China includes China mainland, H",TRUE,FALSE,rag-20b,fact-09
+7,By what percentage did JPMorganChase's net income change from 2024 to 2025?,"It decreased about 2.43% ($58,471M to $57,048M).",JPMorgan Chase’s net income fell by about 2 percent from 2024 to 2025[S5].,"Financial performance of JPMorganChase |
+Year ended December 31, (in millions, except per share data and ratios) |
+2025 | 2024 | Change
+Selected income statement data |
+Noninterest revenue | $87,004 | $84,973 | 2%
+Net interest income | 95,443 | 92,583 | 3
+Total net revenue | 182,447 | 177,556 | 3
+Total noninterest expense | 95,640 | 91,797 | 4
+Pre-provision profit | 86,807 | 85,759 | 1
+Provision f",FALSE,FALSE,rag-120b,numeric_calc-08
+8,Which company is NVIDIA's 'Customer A'?,Not answerable from the corpus. NVIDIA does not name the customer.,"The 10-K does not identify the company that is referred to as “Customer A.” The filing only states that this customer represented 13 % of NVIDIA’s FY 2024 revenue, but the actual name is not disclosed. [S1]","We receive a significant amount of our revenue from a limited number of customers within our distribution and partner network. Sales to one customer, Customer A, represented 13% of total revenue for fiscal year 2024, which was attributable to the Compute & Networking segment. With several of these channel partners, we are selling multiple products and systems in our portfolio through their channel",TRUE,FALSE,agent-20b,unanswerable-07
+9,"How many employees did JPMorganChase have globally at the end of 2025, and in how many countries were they located?","318,512 employees located in 66 countries.","JPMorgan Chase had 318,512 employees globally at the end of FY 2025, and those employees were located in 66 countries. [S2]","Human capital
+JPMorganChase believes that its long-term growth and success depend on its ability to identify, attract, develop, retain and engage talented employees and foster an inclusive work environment. The information provided below relates to JPMorganChase’s full-time and part-time employees and does not include the Firm’s contractors.
+Global workforce
+As of December 31, 2025, JPMorganChase ",TRUE,FALSE,rag-20b,fact-05
+10,What was Apple's diluted earnings per share for fiscal 2025?,Diluted EPS: $7.46.,Apple’s diluted earnings per share for fiscal 2025 was $7.46 per share[S2][S3],"Note 3 – Earnings Per Share
+The following table shows the computation of basic and diluted earnings per share for 2025, 2024 and 2023 (net income in millions and shares in thousands):
+2025 | 2024 | 2023
+Numerator: |
+Net income | $112,010 | $93,736 | $96,995
+Denominator: |
+Weighted-average basic shares outstanding | 14,948,500 | 15,343,783 | 15,744,231
+Effect of dilutive share-based awards | 56,197
+---
+Years ended |
+September 27, 2025 | September 28, 2024 | September 30, 2023
+Net sales: |
+Products | $307,003 | $294,866 | $298,085
+Services | 109,158 | 96,169 | 85,200
+Total net sales | 416,161 | 391,035 | 383,285
+Cost of sales: |
+Products | 194,116 | 185,233 | 189,282
+Services | 26,844 | 25,119 | 24,855
+Total cost of sales | 220,960 | 210,352 | 214,137
+Gross margin | 195,201 | 180,683 | 169,148
+Op",TRUE,FALSE,rag-120b,numeric_lookup-02
+11,"Which of Walmart, Costco and Target had the highest diluted EPS in fiscal 2025?","Costco, at $18.21 (Target $8.86, Walmart $2.41).","The filings do not provide diluted earnings per share for Costco or Target for fiscal 2025, so only Walmart’s FY2025 diluted EPS of $2.41 is available. Therefore, it cannot be determined which of the three companies had the highest diluted EPS in fiscal 2025.",(none),FALSE,TRUE,rag-20b,comparison-07
+12,What was Bank of America's net income for 2025?,"Net income: $30,509 million.",Bank of America’s net income for fiscal year 2025 was $30.5 billion[T1].,"{""sql"": ""SELECT value FROM financials WHERE ticker='BAC' AND fiscal_year=2025 AND metric='net_income';"", ""columns"": [""value""], ""rows"": [[30509000000.0]], ""truncated"": false}",TRUE,FALSE,agent-20b,numeric_lookup-10
+13,Why did Apple's Greater China net sales change in fiscal 2025?,"They decreased compared with 2024, primarily due to lower iPhone net sales, partially offset by higher Mac net sales.","Apple’s Greater China net sales fell in FY2025 mainly because iPhone sales were lower than in FY2024, and the decline was only partially offset by a rise in Mac sales. [S1]","Europe
+Europe net sales increased during 2025 compared to 2024 primarily due to higher net sales of Services, iPhone and Mac.
+Greater China
+Greater China net sales decreased during 2025 compared to 2024 primarily due to lower net sales of iPhone, partially offset by higher net sales of Mac.
+Japan
+Japan net sales increased during 2025 compared to 2024 primarily due to higher net sales of iPhone, Se",TRUE,FALSE,rag-20b,fact-19
+14,What was JPMorganChase's gross margin in 2025?,Not answerable from the corpus. Banks do not report gross profit or gross margin.,"JPMorgan Chase’s 2025 filing reports total net revenue of $182,447 million[S1], but it does not disclose a gross-profit figure. Because gross profit is not provided, a gross-margin (gross profit ÷ revenue) cannot be calculated from the 10-K.","Financial performance of JPMorganChase |
+Year ended December 31, (in millions, except per share data and ratios) |
+2025 | 2024 | Change
+Selected income statement data |
+Noninterest revenue | $87,004 | $84,973 | 2%
+Net interest income | 95,443 | 92,583 | 3
+Total net revenue | 182,447 | 177,556 | 3
+Total noninterest expense | 95,640 | 91,797 | 4
+Pre-provision profit | 86,807 | 85,759 | 1
+Provision f",TRUE,FALSE,agent-120b,unanswerable-03
+15,How did Microsoft's capital expenditures in fiscal 2025 compare with fiscal 2021?,"About 3.13x higher ($20,622M to $64,551M).","Microsoft’s capital expenditures rose from $20.6 billion in fiscal 2021 to $64.6 billion in fiscal 2025, an increase of $44.0 billion or 213 % over the four-year period. [T1]","{""sql"": ""SELECT fiscal_year, value FROM financials WHERE ticker='MSFT' AND metric='capex' AND fiscal_year IN (2021,2025);"", ""columns"": [""fiscal_year"", ""value""], ""rows"": [[2021, 20622000000.0], [2025, 64551000000.0]], ""truncated"": false}",TRUE,FALSE,agent-20b,structured-03
+16,"By what percentage did Target's total revenue change in the fiscal year ended February 1, 2025?","It decreased about 0.79% ($107,412M to $106,566M), driven by one less week than the prior year.","Target’s total revenue fell by about 0.79 % in the fiscal year ended February 1, 2025, decreasing from $107.412 billion in FY2024 to $106.566 billion in FY2025[T1].","{""sql"": ""SELECT fiscal_year, value FROM financials WHERE ticker='TGT' AND metric='revenue' AND fiscal_year IN (2024,2025) ORDER BY fiscal_year"", ""columns"": [""fiscal_year"", ""value""], ""rows"": [[2024, 107412000000.0], [2025, 106566000000.0]], ""truncated"": false}",TRUE,FALSE,agent-120b,numeric_calc-09
+17,"What was Walmart's net income for the fiscal year ended January 31, 2026?","Not answerable from the corpus. That fiscal year is not in the corpus (latest is the year ended January 31, 2025).","The filings provided do not contain Walmart’s net income for the fiscal year ended January 31, 2026.",(none),TRUE,FALSE,rag-20b,unanswerable-08
+18,"By what percentage did Target's total revenue change in the fiscal year ended February 1, 2025?","It decreased about 0.79% ($107,412M to $106,566M), driven by one less week than the prior year.","Target’s total revenue fell by about 0.79 % in the fiscal year ended February 1, 2025 compared with the prior year. The revenue dropped from $107.4 billion in FY 2024 to $106.6 billion in FY 2025, a decline of (106.566 billion – 107.412 billion)/107.412 billion × 100 ≈ –0.79 %[T1][C1]","{""sql"": ""SELECT fiscal_year, value FROM financials WHERE ticker='TGT' AND metric='revenue' AND fiscal_year IN (2024,2025) ORDER BY fiscal_year;"", ""columns"": [""fiscal_year"", ""value""], ""rows"": [[2024, 107412000000.0], [2025, 106566000000.0]], ""truncated"": false}",TRUE,FALSE,agent-20b,numeric_calc-09
+19,What were Goldman Sachs's total net revenues for 2025?,"Total net revenues: $58,283 million.",Goldman Sachs reported total net revenues of $58.28 billion for FY 2025. [S5],"Net revenues were $58.28 billion for 2025, 9% higher than 2024, reflecting higher net revenues in Global Banking & Markets, partially offset by significantly lower net revenues in Platform Solutions. The increase in net revenues in Global Banking & Markets primarily reflected significantly higher net revenues in Equities, significantly higher Investment banking fees and higher net revenues in Fixe",TRUE,FALSE,rag-20b,numeric_lookup-11
+20,What was Goldman Sachs's diluted EPS in 2021?,$59.45.,The filings provided do not contain a figure for Goldman Sachs’s diluted earnings per share for FY 2021.,(none),FALSE,FALSE,rag-20b,structured-07
+21,Which company is NVIDIA's 'Customer A'?,Not answerable from the corpus. NVIDIA does not name the customer.,"NVIDIA does not disclose the identity of “Customer A.” The 2024 and 2025 10-K filings refer only to “Customer A” as an anonymized direct customer that accounted for a material share of revenue, but they do not name the specific company behind that label[S3][S1].","All Other operating loss - The year-on-year decrease was due to the $1.4 billion Arm acquisition termination cost in fiscal year 2023, partially offset by a $839 million increase in stock-based compensation expense in fiscal year 2024.
+Concentration of Revenue
+Revenue by geographic region is designated based on the billing location even if the revenue may be attributable to end customers, such as 
+---
+All Other operating loss – The year over year increase was due to an increase in stock-based compensation expense reflecting employee growth and compensation increases.
+Concentration of Revenue
+We refer to customers who purchase products directly from NVIDIA as direct customers, such as AIBs, distributors, ODMs, OEMs, and system integrators. We have certain customers that may purchase products dir",TRUE,FALSE,agent-120b,unanswerable-07
+22,What was Tim Cook's total compensation in fiscal 2025?,"Not answerable from the corpus. Executive compensation is incorporated by reference from the proxy statement, which is not in the corpus.","The Apple 10-K for FY 2025 does not disclose Tim Cook’s total compensation. The filing notes that executive compensation details are provided in the 2026 proxy statement, not in the 10-K itself. No figure is available in the 10-K sources.",(none),TRUE,FALSE,agent-20b,unanswerable-10
+23,What share of Microsoft's fiscal 2025 operating cash flow went to additions to property and equipment?,"About 47.41% ($64,551M of $136,162M).","Microsoft’s fiscal 2025 operating cash flow was $136.162 billion, and capital expenditures (additions to property and equipment) were $64.551 billion, meaning about 47.4 % of operating cash flow was used for those additions[T1].","{""sql"": ""SELECT metric, value, original_value, unit FROM financials WHERE ticker='MSFT' AND fiscal_year=2025 AND metric IN ('operating_cash_flow','capex')"", ""columns"": [""metric"", ""value"", ""original_value"", ""unit""], ""rows"": [[""capex"", 64551000000.0, 64551000000.0, ""USD""], [""operating_cash_flow"", 136162000000.0, 136162000000.0, ""USD""]], ""truncated"": false}",TRUE,FALSE,agent-120b,numeric_calc-11
+24,What diluted EPS did NVIDIA report for fiscal year 2024 in its fiscal 2024 Form 10-K?,As reported (before the June 2024 10-for-1 stock split): $11.93.,NVIDIA reported diluted earnings per share of $11.93 for fiscal year 2024 in its FY 2024 Form 10-K. [T1],"{""sql"": ""SELECT value, original_value FROM financials WHERE ticker='NVDA' AND fiscal_year=2024 AND metric='eps_diluted';"", ""columns"": [""value"", ""original_value""], ""rows"": [[1.19, 11.93]], ""truncated"": false}",TRUE,FALSE,agent-120b,numeric_lookup-16
+25,What are NVIDIA's operating segments?,"Two operating segments: Compute & Networking, and Graphics.",NVIDIA reports two operating segments: Compute & Networking and Graphics[S4][S7].,"Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations
+The following discussion and analysis of our financial condition and results of operations should be read in conjunction with “Item 1A. Risk Factors”, our Consolidated Financial Statements and related Notes thereto, as well as other cautionary statements and risks described elsewhere in this Annual Report
+---
+Professional artists, architects and designers use NVIDIA partner products accelerated with our GPUs and software platform for a range of creative and design use cases, such as creating visual effects in movies or designing buildings and products. In addition, generative AI is expanding the market for our workstation-class GPUs, as more enterprise customers develop and deploy AI applications with ",TRUE,FALSE,rag-120b,fact-10

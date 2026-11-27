@@ -125,6 +125,21 @@ supported by the cited sources. Independently, a deterministic check extracts nu
 from the answer and compares them with the gold value. **The two agree on 96–98% of
 numeric questions.** Latency figures include waiting on free-tier rate limits.
 
+**Human audit.** I hand-labelled a random sample of 25 graded answers, blind to the
+judge's verdicts (`finrag-eval-answers --stage audit`, then `--stage agreement`):
+
+| Judge verdict | Agreement with my labels | Cohen's kappa |
+|---|---|---|
+| Correct | 96% (24/25) | 0.78 |
+| Contains unsupported claims | 96% (24/25) | 0.65 |
+
+The two disagreements are borderline calls: the judge accepted "about 2%" for a 2.43%
+decline (the filing's own rounded figure, but outside the question's tolerance), and it
+flagged an uncited mention of a proxy statement that I did not count. A first pass of the
+audit sheet truncated sources to 400 characters, which made supported claims look
+unsupported; four labels were re-checked against the full cited text, and the sheet now
+always shows full sources.
+
 ![Evaluation dashboard in the app](docs/demo-results.png)
 
 ## Design decisions and lessons
@@ -159,8 +174,8 @@ numeric questions.** Latency figures include waiting on free-tier rate limits.
   questions is roughly ±6 points).
 - Numbers in table rows with blank cells can still misalign with their column headers;
   the XBRL tool covers the most common metrics.
-- The LLM judge is validated against a deterministic number check; a hand-labelled audit
-  sample (`finrag-eval-answers --stage audit`) is the next step.
+- The judge was validated on 25 hand-labelled answers; a larger audit would narrow the
+  uncertainty on agreement, especially for hallucination, where positives are rare.
 - The free Groq tier limits tokens per day, so the public demo may occasionally be rate
   limited.
 

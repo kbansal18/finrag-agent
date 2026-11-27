@@ -291,20 +291,73 @@ def report(questions: list[Question]) -> None:
     print(f"\nWrote {RESULTS / 'answer_summary.csv'}")
 
 
-def export_audit(configs: list[str], n: int, seed: int = 0) -> Path:
-    """Random sample of judged answers for a human to label, to validate the judge."""
+AUDIT_FILE = RESULTS / "judge_audit.csv"
+_TRUE = {"true", "t", "yes", "y", "1"}
+_FALSE = {"false", "f", "no", "n", "0"}
+
+
+def export_audit(configs: list[str], questions: list[Question], n: int, seed: int = 0) -> Path:
+    """A blind labelling sheet: a random sample of graded answers, judge verdicts hidden.
+
+    Showing the judge's verdict next to the blank would anchor the human toward agreeing
+    with it and inflate the agreement score, so verdicts stay in the answer cache and are
+    joined only when agreement is computed.
+    """
+    qmap = {q.id: q for q in questions}
     rows = []
     for config in configs:
         rows += [r for r in _load_cache(ANSWERS_DIR / f"{config}.jsonl").values() if "judge" in r]
     sample = random.Random(seed).sample(rows, min(n, len(rows)))
-    out = RESULTS / "judge_audit.csv"
-    with out.open("w", newline="", encoding="utf-8") as f:
+    with AUDIT_FILE.open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f, lineterminator="\n")
-        w.writerow(["config", "qid", "answer", "judge_correct", "judge_hallucinated",
-                    "human_correct", "human_hallucinated"])  # fmt: skip
-        for r in sample:
-            w.writerow([r["config"], r["qid"], r["answer"], r["judge"]["correct"],
-                        r["judge"]["hallucinated"], "", ""])  # fmt: skip
+        w.writerow(["#", "question", "gold_answer", "system_answer", "cited_sources",
+                    "human_correct", "human_hallucinated", "config", "qid"])  # fmt: skip
+        for i, r in enumerate(sample, 1):
+            q = qmap[r["qid"]]
+            # Full text, never truncated: labellers must see the whole source to judge
+            # whether a claim is supported (an earlier 400-char cut caused false "unsupported").
+            cited = "\n---\n".join(r.get("cited_texts", [])) or "(none)"
+            w.writerow([i, q.question, q.answer, r["answer"], cited, "", "", r["config"], r["qid"]])
+    return AUDIT_FILE
+
+
+def _parse_label(value: str) -> bool | None:
+    v = (value or "").strip().lower()
+    return True if v in _TRUE else False if v in _FALSE else None
+
+
+def cohen_kappa(a: list[bool], b: list[bool]) -> float | None:
+    """Agreement corrected for chance (1 = perfect, 0 = no better than chance)."""
+    n = len(a)
+    if n == 0:
+        return None
+    observed = sum(x == y for x, y in zip(a, b, strict=True)) / n
+    pa, pb = sum(a) / n, sum(b) / n
+    expected = pa * pb + (1 - pa) * (1 - pb)
+    return None if expected == 1 else round((observed - expected) / (1 - expected), 3)
+
+
+def audit_agreement(path: Path = AUDIT_FILE) -> dict[str, dict[str, float | int | None]]:
+    """Compare human labels in the audit sheet with the judge's stored verdicts."""
+    with path.open(encoding="utf-8") as f:
+        labels = list(csv.DictReader(f))
+    caches = {c: _load_cache(ANSWERS_DIR / f"{c}.jsonl") for c in {r["config"] for r in labels}}
+    out: dict[str, dict[str, float | int | None]] = {}
+    for field, judge_key in (("correct", "correct"), ("hallucinated", "hallucinated")):
+        human, judged = [], []
+        for row in labels:
+            h = _parse_label(row[f"human_{field}"])
+            rec = caches[row["config"]].get(row["qid"])
+            if h is None or rec is None or "judge" not in rec:
+                continue
+            human.append(h)
+            judged.append(bool(rec["judge"][judge_key]))
+        agree = sum(x == y for x, y in zip(human, judged, strict=True))
+        out[field] = {
+            "labelled": len(human),
+            "agreement": round(agree / len(human), 3) if human else None,
+            "kappa": cohen_kappa(human, judged),
+        }
     return out
 
 
@@ -315,8 +368,8 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--judge-model", default=DEFAULT_JUDGE)
     p.add_argument("--limit", type=int, help="only the first N questions (smoke test)")
     p.add_argument("--sleep", type=float, default=0.0, help="seconds between calls (free tier)")
-    p.add_argument("--stage", choices=["all", "repair", "generate", "grade", "report", "audit"],
-                   default="all")  # fmt: skip
+    stages = ["all", "repair", "generate", "grade", "report", "audit", "agreement"]
+    p.add_argument("--stage", choices=stages, default="all")
     p.add_argument("--list-models", action="store_true", help="show models your key can use")
     a = p.parse_args(argv)
 
@@ -364,7 +417,12 @@ def main(argv: list[str] | None = None) -> None:
     if a.stage in ("all", "report"):
         report(load_questions(a.questions))
     if a.stage == "audit":
-        print(f"Wrote {export_audit(a.configs, 25)}: fill in the human_* columns")
+        path = export_audit(a.configs, load_questions(a.questions), 25)
+        print(f"Wrote {path}: fill in human_correct and human_hallucinated (True/False)")
+    if a.stage == "agreement":
+        for field, stats in audit_agreement().items():
+            print(f"{field:13} labelled={stats['labelled']}  agreement={stats['agreement']}  "
+                  f"kappa={stats['kappa']}")  # fmt: skip
 
 
 if __name__ == "__main__":
